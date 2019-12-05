@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 245526133}
   - component: {fileID: 245526132}
   m_Layer: 0
-  m_Name: SixthTrigger
+  m_Name: SeventhTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,6 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 416028660}
+  player: {fileID: 28059431}
   deactivate: {fileID: 245526131}
 --- !u!114 &245526133
 MonoBehaviour:
@@ -197,7 +198,7 @@ MonoBehaviour:
     sentences:
     - 'On your adventures you will face dangerous enemies. To keep yourself safe,
       you might want to use a gun. Weapons and ammunition can be found throughout
-      the world. To pick up a weapon, you must first drop your plant. '
+      the world. '
 --- !u!65 &245526134
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -264,13 +265,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245526131}
-  m_LocalRotation: {x: -0, y: 0.29707202, z: -0, w: 0.95485514}
-  m_LocalPosition: {x: -339.09, y: 37.99, z: 445.96}
+  m_LocalRotation: {x: -0, y: 0.15652306, z: -0, w: 0.9876743}
+  m_LocalPosition: {x: -339.09, y: 37.99, z: 443.3}
   m_LocalScale: {x: 37.872692, y: 2.0728946, z: 1.6306552}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
-  m_LocalEulerAnglesHint: {x: 0, y: 34.564003, z: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 18.01, z: 0}
 --- !u!1001 &271767321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -404,6 +405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 416028660}
+  player: {fileID: 28059431}
   deactivate: {fileID: 409218121}
 --- !u!114 &409218123
 MonoBehaviour:
@@ -420,10 +422,11 @@ MonoBehaviour:
   dialogue:
     name: Press Enter to continue
     sentences:
-    - "You can use water bottles to water your plant. If you have found any water
-      bottles, press G to water the plant. \n\nThe plant drops seeds which you can
-      plant to create more trees. Pick up the seeds and press E to plant them in the
-      circle."
+    - 'You can use water bottles to water your plant. If you have found any water
+      bottles, put down the plant by pressing Q again, then press G to water the plant.
+
+
+'
 --- !u!65 &409218124
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -491,7 +494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 409218121}
   m_LocalRotation: {x: -0, y: 0.03447797, z: -0, w: 0.99940544}
-  m_LocalPosition: {x: -348.4, y: 37.99, z: 435.61}
+  m_LocalPosition: {x: -348.4, y: 37.99, z: 434.71}
   m_LocalScale: {x: 37.872692, y: 2.0728946, z: 1.6306552}
   m_Children: []
   m_Father: {fileID: 0}
@@ -922,6 +925,134 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 630583268}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &736135381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 736135387}
+  - component: {fileID: 736135386}
+  - component: {fileID: 736135385}
+  - component: {fileID: 736135384}
+  - component: {fileID: 736135383}
+  - component: {fileID: 736135382}
+  m_Layer: 0
+  m_Name: FifthTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &736135382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736135381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea89f3f5ae6978a4caf931a9a7b4783c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 416028660}
+  player: {fileID: 28059431}
+  deactivate: {fileID: 736135381}
+--- !u!114 &736135383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736135381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 345a945f8182da74b80d57289832b48b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Press Enter to continue
+    sentences:
+    - 'By watering the plant, the plant drops seeds. Pick up the seeds by pressing
+      Q and deliver them to the circle and press E to plant the seeds.
+
+'
+--- !u!65 &736135384
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736135381}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &736135385
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736135381}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &736135386
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736135381}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &736135387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736135381}
+  m_LocalRotation: {x: -0, y: 0.03447797, z: -0, w: 0.99940544}
+  m_LocalPosition: {x: -348.4, y: 37.99, z: 436.7}
+  m_LocalScale: {x: 37.872692, y: 2.0728946, z: 1.6306552}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 3.9520001, z: 0}
 --- !u!1001 &773210798
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1006,7 +1137,7 @@ GameObject:
   - component: {fileID: 865671189}
   - component: {fileID: 865671188}
   m_Layer: 0
-  m_Name: FifthTrigger
+  m_Name: SixthTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1025,6 +1156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 416028660}
+  player: {fileID: 28059431}
   deactivate: {fileID: 865671187}
 --- !u!114 &865671189
 MonoBehaviour:
@@ -1041,8 +1173,9 @@ MonoBehaviour:
   dialogue:
     name: Press Enter to continue
     sentences:
-    - "Congratulations, you have succesfully begun your journey!\n\nOh, did you forget
-      to pick up the plant? \nRemember to keep it close at all times."
+    - "Congratulations, you have succesfully planted your first tree. Keep planting
+      trees to progress towards the final mother tree.\r\n\r\nOh, did you forget to
+      pick up the plant? \r\nRemember to keep it close at all times.\r\n"
 --- !u!65 &865671190
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1114,7 +1247,7 @@ Transform:
   m_LocalScale: {x: 37.872692, y: 2.0728946, z: 1.6306552}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 16.872002, z: 0}
 --- !u!1 &966466506
 GameObject:
@@ -1345,6 +1478,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7690588077181667553, guid: f7f09b68b2d393e4e9138151e44cbd6d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9094713482970916951, guid: f7f09b68b2d393e4e9138151e44cbd6d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723677844288723299, guid: f7f09b68b2d393e4e9138151e44cbd6d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4646717216817324460, guid: f7f09b68b2d393e4e9138151e44cbd6d,
         type: 3}
       propertyPath: animSpeed
@@ -1455,6 +1603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 416028660}
+  player: {fileID: 28059431}
   deactivate: {fileID: 1237414633}
 --- !u!114 &1237414635
 MonoBehaviour:
@@ -1471,7 +1620,7 @@ MonoBehaviour:
   dialogue:
     name: Press Enter to continue
     sentences:
-    - "Welcome to the tutorial! \nPress E to pick up objects.\n"
+    - "Welcome to the tutorial! \r\nPress Q to pick up objects.\r\n"
 --- !u!65 &1237414636
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1824,6 +1973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 416028660}
+  player: {fileID: 28059431}
   deactivate: {fileID: 1482753474}
 --- !u!114 &1482753476
 MonoBehaviour:
@@ -1840,9 +1990,8 @@ MonoBehaviour:
   dialogue:
     name: Press Enter to continue
     sentences:
-    - In your upcoming adventures you can find water bottles laying around. To pick
-      up objects you need to drop the plant. Press E to drop the plant and press E
-      to pick up the water bottle.
+    - In your upcoming adventures you can find water bottles laying around. Press
+      E to pick up the water bottle.
 --- !u!65 &1482753477
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2035,6 +2184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 416028660}
+  player: {fileID: 28059431}
   deactivate: {fileID: 1650418463}
 --- !u!114 &1650418465
 MonoBehaviour:
@@ -2244,6 +2394,26 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3555099407228808661, guid: 69deb6c3e93078645a2f600f350eedd8,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3555099407228808661, guid: 69deb6c3e93078645a2f600f350eedd8,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3555099406519561451, guid: 69deb6c3e93078645a2f600f350eedd8,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3555099406519561451, guid: 69deb6c3e93078645a2f600f350eedd8,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3555099407000943224, guid: 69deb6c3e93078645a2f600f350eedd8,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -2269,36 +2439,6 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3555099407701008896, guid: 69deb6c3e93078645a2f600f350eedd8,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3555099407701008896, guid: 69deb6c3e93078645a2f600f350eedd8,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3555099407701008896, guid: 69deb6c3e93078645a2f600f350eedd8,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3555099407701008896, guid: 69deb6c3e93078645a2f600f350eedd8,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3555099407228808661, guid: 69deb6c3e93078645a2f600f350eedd8,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3555099407228808661, guid: 69deb6c3e93078645a2f600f350eedd8,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3555099407229175567, guid: 69deb6c3e93078645a2f600f350eedd8,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -2319,14 +2459,24 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3555099406519561451, guid: 69deb6c3e93078645a2f600f350eedd8,
+    - target: {fileID: 3555099407701008896, guid: 69deb6c3e93078645a2f600f350eedd8,
         type: 3}
-      propertyPath: m_AnchorMax.x
+      propertyPath: m_textInfo.characterCount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3555099406519561451, guid: 69deb6c3e93078645a2f600f350eedd8,
+    - target: {fileID: 3555099407701008896, guid: 69deb6c3e93078645a2f600f350eedd8,
         type: 3}
-      propertyPath: m_AnchorMax.y
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3555099407701008896, guid: 69deb6c3e93078645a2f600f350eedd8,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3555099407701008896, guid: 69deb6c3e93078645a2f600f350eedd8,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2352,7 +2502,7 @@ GameObject:
   - component: {fileID: 1724985083}
   - component: {fileID: 1724985082}
   m_Layer: 0
-  m_Name: SeventhTrigger
+  m_Name: EightthTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2371,6 +2521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 416028660}
+  player: {fileID: 28059431}
   deactivate: {fileID: 1724985081}
 --- !u!114 &1724985083
 MonoBehaviour:
@@ -2387,8 +2538,8 @@ MonoBehaviour:
   dialogue:
     name: Press Enter to continue
     sentences:
-    - Sadly, you cannot shoot while carrying the plant. Picked up weapons can be equipped
-      by using the numbers on your keyboard.
+    - "Sadly, you cannot shoot while carrying the plant. Picked up weapons can be
+      equipped by using the numbers on your keyboard.\r\n"
 --- !u!65 &1724985084
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2456,11 +2607,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724985081}
   m_LocalRotation: {x: 0, y: -0.8260394, z: 0, w: 0.5636125}
-  m_LocalPosition: {x: -333.67, y: 37.99, z: 447.9}
+  m_LocalPosition: {x: -337.96, y: 37.99, z: 447.09}
   m_LocalScale: {x: 6.061188, y: 1.6497339, z: 1.2977732}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: -111.38801, z: 0}
 --- !u!20 &1857333108 stripped
 Camera:

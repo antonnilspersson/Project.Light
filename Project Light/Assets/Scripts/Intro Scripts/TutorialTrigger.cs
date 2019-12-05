@@ -5,27 +5,40 @@ using UnityEngine;
 public class TutorialTrigger : MonoBehaviour
 {
     public GameObject dialogueManager;
-    private DialogueTrigger trigger;
+    public GameObject player;
     public GameObject deactivate;
+    private MovementScript movement;
+    private DialogueTrigger trigger;
 
     private bool enter = false;
 
     void Start()
     {
+        movement = player.GetComponent<MovementScript>();
         trigger = gameObject.GetComponent<DialogueTrigger>();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            movement.enabled = true;
+            enter = false;
+        }
     }
 
     private void OnTriggerEnter(Collider col)
     {
         enter = true;
 
-        if(col.transform.gameObject.name == "Player")
+        if (col.transform.gameObject.name == "Player")
         {
             if (enter)
             {
                 trigger.TriggerDialogue();
-                deactivate.SetActive(false);
+                movement.enabled = false;
             }
+            deactivate.SetActive(false);
         }
     }
 }
