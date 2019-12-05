@@ -29,7 +29,7 @@ public class PlantSeed : MonoBehaviour
             if (IsSeedHeld())
             {
                 Debug.Log("worked!");
-                if (Input.GetKeyDown(KeyCode.E) && !spawned)
+                if (Input.GetKeyDown(KeyCode.Q) && !spawned)
                 {
                     spawnedSeed = (GameObject)Instantiate(seed, transform.position, Quaternion.identity);
                     spawnedSeed.GetComponent<LightAdjuster>().isPlanted = true;
@@ -41,7 +41,7 @@ public class PlantSeed : MonoBehaviour
             }
         }
 
-        if (Test && Input.GetKeyDown(KeyCode.E) && !spawned)
+        if (Test && Input.GetKeyDown(KeyCode.Q) && !spawned)
         {
             Debug.Log("hej");
             spawnedSeed = (GameObject)Instantiate(seed, transform.position, Quaternion.identity);

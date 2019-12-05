@@ -24,4 +24,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Tutorial");
     }
+
+    public void OpenTool()
+    {
+        SceneManager.LoadScene("HeatMap");
+    }
 }

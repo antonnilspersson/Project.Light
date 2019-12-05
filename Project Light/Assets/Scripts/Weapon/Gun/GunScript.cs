@@ -25,7 +25,8 @@ public class GunScript : MonoBehaviour
     public int currentAmmo = -1;
     public float reloadTime = 1f;
     private bool isReloading = false;
-    private int enemyLayer = 1<<13;
+    public LayerMask mask;
+    public bool invertMask;
 
     public ParticleSystem muzzleFlash;
     //public GameObject impactEffect;
@@ -108,7 +109,8 @@ public class GunScript : MonoBehaviour
         RaycastHit hit;
 
         anim.SetTrigger("RifleShoot");
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
+        LayerMask newMask = ~(invertMask ? ~mask.value : mask.value);
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range, newMask))
         {
             Debug.Log(hit.transform.name);
             TargetScript target = null;
