@@ -1,0 +1,44 @@
+tree("Root")
+	fallback
+		tree("Roar")
+		tree("Charge")
+		tree("Smash")
+		tree("Swipe")
+		tree("Aggro")
+		tree("Chase")
+
+tree("Roar")
+	sequence
+		HealthBelowThreshold
+		RoarIsNotOnCooldown
+		Roar
+
+tree("Charge")
+	sequence
+		IsInChargeRange
+		IsNotTooClose
+		ChargeIsNotOnCooldown
+		FindChargePosition
+		Charge
+
+tree("Smash")
+	sequence
+		IsInSmashRange
+		SmashIsNotOnCooldown
+		Smash
+
+tree("Swipe")
+	sequence
+		IsInSwipeRange
+		SwipeIsNotOnCooldown
+		Swipe
+
+tree("Aggro")
+	sequence
+		race
+			IsOutsideOfAggroRange
+			IsPlayerOutsideOfAggroRange
+		WalkBackToStart
+
+tree("Chase")
+	ChasePlayer
