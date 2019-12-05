@@ -254,12 +254,6 @@ public class HeatMapManager : MonoBehaviour
         CreateItemFile();
     }
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.P))
-            CreateFiles();
-    }
-
     //void OnApplicationQuit()
     //{
     //    cubes = heatMap.GetCubes();

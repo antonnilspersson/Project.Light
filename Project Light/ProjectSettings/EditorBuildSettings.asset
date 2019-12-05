@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 3472bbaf868921d48832fd3de6541aee
+  - enabled: 1
+    path: Assets/Scenes/HeatMap.unity
+    guid: 995c45e651b31ff4eb08205beffdb948
   m_configObjects: {}
