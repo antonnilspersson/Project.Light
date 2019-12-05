@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Lootcube
+  - GM
+  - Environment
+  - MainPlant Hitbox
+  - Bolt
+  - Enemy
+  - PlantSpot
+  - Hand
+  - Usable
+  - AttackCube
+  - Inventory
+  - SwipeCube
+  - BoneCharger
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - PostProcessing
+  - Player
+  - Environment
+  - Item
+  - UsableObject
+  - Enemy
+  - heatmap
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
