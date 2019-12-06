@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class TargetScript : MonoBehaviour
 {
+    public bool DeadMonster = false;
+
     public float health = 100f;
 
     private void Update()
@@ -26,6 +28,8 @@ public class TargetScript : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
+        DeadMonster = true;
+        Debug.Log("Bone Deaderino");
     }
 
     private void OnCollisionEnter(Collision collision)

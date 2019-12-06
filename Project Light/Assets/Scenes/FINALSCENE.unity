@@ -38858,30 +38858,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2844445039424469939, guid: f7f09b68b2d393e4e9138151e44cbd6d,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2844445039424469939, guid: f7f09b68b2d393e4e9138151e44cbd6d,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7318858584339584015, guid: f7f09b68b2d393e4e9138151e44cbd6d,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7318858584339584015, guid: f7f09b68b2d393e4e9138151e44cbd6d,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1621451483596283762, guid: f7f09b68b2d393e4e9138151e44cbd6d,
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2844445039424469939, guid: f7f09b68b2d393e4e9138151e44cbd6d,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2844445039424469939, guid: f7f09b68b2d393e4e9138151e44cbd6d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7318858584339584015, guid: f7f09b68b2d393e4e9138151e44cbd6d,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7318858584339584015, guid: f7f09b68b2d393e4e9138151e44cbd6d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1621451483596283661, guid: f7f09b68b2d393e4e9138151e44cbd6d,
         type: 3}
@@ -39008,6 +39008,16 @@ PrefabInstance:
     - target: {fileID: 941200252, guid: f7f09b68b2d393e4e9138151e44cbd6d, type: 3}
       propertyPath: m_Name
       value: UI Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5330107850407351672, guid: f7f09b68b2d393e4e9138151e44cbd6d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -117.37109
+      objectReference: {fileID: 0}
+    - target: {fileID: 5330107850407351672, guid: f7f09b68b2d393e4e9138151e44cbd6d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -117.37109
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7f09b68b2d393e4e9138151e44cbd6d, type: 3}
@@ -44496,11 +44506,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1833180937}
     m_Modifications:
-    - target: {fileID: 5217139751994556815, guid: a9991fba91ff0fa4c8ed6f8b252534e7,
-        type: 3}
-      propertyPath: m_Name
-      value: DustMotesEffect (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 5218186026457342639, guid: a9991fba91ff0fa4c8ed6f8b252534e7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44565,6 +44570,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.9136775
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217139751994556815, guid: a9991fba91ff0fa4c8ed6f8b252534e7,
+        type: 3}
+      propertyPath: m_Name
+      value: DustMotesEffect (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9991fba91ff0fa4c8ed6f8b252534e7, type: 3}

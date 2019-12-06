@@ -40,15 +40,15 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 1.06
   MinDistance: 1
   MaxDistance: 50
   Pan2D: 0
@@ -70,6 +70,102 @@ AudioSource:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.6079254
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.844
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &-4487226306362620543
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698097572015764658}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
       value: 0
       inSlope: 0
       outSlope: 0
@@ -125,7 +221,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &1974611202078935554
+--- !u!82 &4350709982210727124
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,9 +242,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 50
+  MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 2
+  rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -165,7 +261,7 @@ AudioSource:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.6079254
+      time: 1
       value: 0
       inSlope: 0
       outSlope: 0
@@ -233,12 +329,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1f2c32c52b7de14f9f101963ad3e22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mediumBoiWalk: {fileID: 8300000, guid: af3c61cbc94027c4b9f874baf2c67bbd, type: 3}
-  mediumBoiCharge: {fileID: 8300000, guid: 49d91fd885fba114db8d2279e126da61, type: 3}
-  mediumBoiWalkAudio: {fileID: 1974611202078935554}
-  mediumBoiChargeAudio: {fileID: -6249204257090926144}
+  BoneWalk: {fileID: 8300000, guid: af3c61cbc94027c4b9f874baf2c67bbd, type: 3}
+  BoneCharge: {fileID: 8300000, guid: 49d91fd885fba114db8d2279e126da61, type: 3}
+  BoneDying: {fileID: 8300000, guid: 9182dddfdf4163b4283c7f3e5a33f4e7, type: 3}
+  BoneWalkAudio: {fileID: -6249204257090926144}
+  BoneChargeAudio: {fileID: 4350709982210727124}
+  BoneDyingAudio: {fileID: 4350709982210727124}
   charging: 0
   hostile: 0
+  dying: 0
+  BoneScript: {fileID: 3220082710402015089}
+  BoneTarget: {fileID: 8920399198410432915}
 --- !u!114 &1976367763945251849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,6 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84958b02526ecae47a8645627e5d8219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeadMonster: 0
   health: 20
 --- !u!1001 &8832061472394751419
 PrefabInstance:
