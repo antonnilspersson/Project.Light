@@ -11,10 +11,6 @@ public class DeathScript : MonoBehaviour
     public Image image;
     Color deathColor;
 
-    private void Start()
-    {
-    }
-
     void Update()
     {
         deathColor = image.color;
@@ -30,6 +26,11 @@ public class DeathScript : MonoBehaviour
             deathColor.a = 0;
             image.color = deathColor;
         }
+    }
+
+    public void Respawn()
+    {
+        SceneManager.LoadScene("LoadingScreen");
     }
 
     void Death()
