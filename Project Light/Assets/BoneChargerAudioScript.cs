@@ -6,15 +6,15 @@ public class BoneChargerAudioScript : MonoBehaviour
 {
     public AudioClip BoneWalk;
     public AudioClip BoneCharge;
-    public AudioClip BoneDying;
+    //public AudioClip BoneDying;
 
     public AudioSource BoneWalkAudio;
     public AudioSource BoneChargeAudio;
-    public AudioSource BoneDyingAudio;
+    //public AudioSource BoneDyingAudio;
 
     public bool charging;
     public bool hostile = false;
-    public bool dying = false;
+    //public bool dying = false;
     
     public AIChargeAttack BoneScript;
     public TargetScript BoneTarget;
@@ -33,10 +33,9 @@ public class BoneChargerAudioScript : MonoBehaviour
         BoneChargeAudio.loop = true;
         BoneChargeAudio.volume = 0.7f;
 
-        BoneDyingAudio.clip = BoneDying;
-        BoneDyingAudio.loop = false;
-        BoneDyingAudio.volume = 0.1f;
-
+        //BoneDyingAudio.clip = BoneDying;
+        //BoneDyingAudio.loop = false;
+        //BoneDyingAudio.volume = 0.1f;
     }
 
     //void SetCharging()
@@ -54,13 +53,13 @@ public class BoneChargerAudioScript : MonoBehaviour
 
     void Update()
     {
-        dying = BoneTarget.DeadMonster;
+        //dying = BoneTarget.DeadMonster;
         charging = BoneScript.attacking;
 
-        if (dying)
-        {
-            BoneDyingAudio.Play();
-        }
+        //if (dying)
+        //{
+        //    BoneDyingAudio.Play();
+        //}
 
         if (charging && hostile)
         {

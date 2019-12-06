@@ -48,7 +48,7 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1.06
+  DopplerLevel: 2.12
   MinDistance: 1
   MaxDistance: 50
   Pan2D: 0
@@ -144,11 +144,11 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 2.07
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 50
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -165,7 +165,7 @@ AudioSource:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1
+      time: 0.600708
       value: 0
       inSlope: 0
       outSlope: 0
@@ -181,7 +181,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -240,11 +240,11 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 2
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 50
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -261,13 +261,13 @@ AudioSource:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1
+      time: 0.600708
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: 0.63145584
+      outSlope: 0.63145584
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.3641762
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -277,7 +277,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -331,13 +331,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BoneWalk: {fileID: 8300000, guid: af3c61cbc94027c4b9f874baf2c67bbd, type: 3}
   BoneCharge: {fileID: 8300000, guid: 49d91fd885fba114db8d2279e126da61, type: 3}
-  BoneDying: {fileID: 8300000, guid: 9182dddfdf4163b4283c7f3e5a33f4e7, type: 3}
   BoneWalkAudio: {fileID: -6249204257090926144}
   BoneChargeAudio: {fileID: 4350709982210727124}
-  BoneDyingAudio: {fileID: 4350709982210727124}
   charging: 0
   hostile: 0
-  dying: 0
   BoneScript: {fileID: 3220082710402015089}
   BoneTarget: {fileID: 8920399198410432915}
 --- !u!114 &1976367763945251849
