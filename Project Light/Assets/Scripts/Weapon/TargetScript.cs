@@ -28,8 +28,7 @@ public class TargetScript : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
-        DeadMonster = true;
-        Debug.Log("Bone Deaderino");
+        FindObjectOfType<AudioManager>().Play("BoneDying");
     }
 
     private void OnCollisionEnter(Collision collision)

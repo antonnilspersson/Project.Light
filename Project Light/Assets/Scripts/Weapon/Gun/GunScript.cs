@@ -105,6 +105,7 @@ public class GunScript : MonoBehaviour
 
     void Shoot()
     {
+        FindObjectOfType<AudioManager>().Play("GunShot", 0.25f);
 
         RaycastHit hit;
 

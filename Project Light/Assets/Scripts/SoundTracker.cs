@@ -6,26 +6,19 @@ using UnityEngine;
 public class SoundTracker : MonoBehaviour
 {
 
-    public int speed; //player speed, differs if player is walking, running, or crouch walking.
-
-    //public AudioClip[] concreteJump = new AudioClip[3];//3 different types of sounds when landing
-    //public AudioClip[] gravelJump = new AudioClip[3];
-    //public AudioClip[] woodJump = new AudioClip[3];
+    public int speed;
+    
     public AudioClip grassWalk;
     public AudioClip grassJump;
-
-
-    //public AudioClip[] concreteSteps = new AudioClip[3];// [0] = crouch, [1] = walk, [2] = sprint
-    //public AudioClip[] gravelSteps = new AudioClip[3];
-    //public AudioClip[] woodSteps = new AudioClip[3];
-
-    public int floorTypes; //0 = concrete, 1 = gravel, 2 = wood;
 
     public AudioSource jumpSource;
     public AudioSource stepsSource;
 
     public bool[] WASD = new bool[4];
     public bool walking = false;
+
+    private float oldTimer = 0f;
+    private float newTimer = 0f;
     
 
     void Start()
@@ -37,61 +30,51 @@ public class SoundTracker : MonoBehaviour
 
         jumpSource.spatialBlend = 1;
         stepsSource.spatialBlend = 1;
-        floorTypes = 0;
 
         jumpSource.volume = 0.5f;
 
         jumpSource.clip = grassJump;
         stepsSource.clip = grassWalk;
-    }
-    
-    //void FloorUpdater()
-    //{
-    //    GetSpeed();
-    //    if (floorTypes == 1)
-    //    {
-    //        stepsSource.clip = concreteSteps[speed];
-    //        jumpSource.clip = concreteJump[UnityEngine.Random.Range(0, 3)];
-    //        print(floorTypes.ToString());
-    //    }
-    //    else if (floorTypes == 2)
-    //    {
-    //        stepsSource.clip = gravelSteps[speed];
-    //        jumpSource.clip = gravelJump[UnityEngine.Random.Range(0, 3)];
-    //        print(floorTypes.ToString());
-    //    }
-    //    else if (floorTypes == 3)
-    //    {
-    //        stepsSource.clip = woodSteps[speed];
-    //        jumpSource.clip = woodJump[UnityEngine.Random.Range(0, 3)];
-    //        print(floorTypes.ToString());
-    //    }
-    //    else
-    //    {
-    //        print("Something's wrong!");
-    //    }
-    //}
-    
-    void GetSpeed()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftControl) && speed != 0)
-        {
-            speed = 0;
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftShift) && speed != 2)
-        {
-            speed = 2;
-        }
-        else
-        {
-            speed = 1;
-        }
+        
     }
 
-    
+    void PlayAmbience()
+    {
+        if(oldTimer == 0f)
+        {
+            oldTimer = Time.time;
+        }
+        
+        newTimer = Time.time;
+
+        Debug.Log(newTimer.ToString());
+
+        int r = UnityEngine.Random.Range(1, 5);
+
+        Debug.Log(r.ToString());
+
+        if(newTimer - oldTimer >= 30f)
+        {
+            if (r == 1)
+                FindObjectOfType<AudioManager>().Play("Ambience1");
+            else if (r == 2)
+                FindObjectOfType<AudioManager>().Play("Ambience2", 0f, 0.7f);
+            else if (r == 3)
+                FindObjectOfType<AudioManager>().Play("Ambience3");
+            else if (r == 4)
+                FindObjectOfType<AudioManager>().Play("Ambience4");
+            else
+                Debug.Log("Something went wrong in SOUNDTRACKER");
+            
+            oldTimer = 0f;
+        }
+        
+    }
 
     void Update()
     {
+        PlayAmbience();
+
         if (Input.GetKeyDown(KeyCode.W))
         {
             WASD[0] = true;
