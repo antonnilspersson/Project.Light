@@ -47,6 +47,7 @@ public class AIChargeAttack : MonoBehaviour
                 else if(AngleDir(transform.forward, temp, transform.up) == 0)
                     temp = this.transform.position + (-this.transform.right * 2);
                 knockBackDir = player.transform.position - temp;
+
                 player.GetComponent<ImpactReceiver>().AddImpact(knockBackDir, force);
             }
                 if (checkOnce)

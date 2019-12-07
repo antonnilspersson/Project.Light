@@ -4,8 +4,14 @@ using UnityEngine;
 public class TargetScript : MonoBehaviour
 {
     public bool DeadMonster = false;
+    private EnemyManager em;
 
     public float health = 100f;
+
+    void Start()
+    {
+        em = GameObject.FindGameObjectWithTag("GM").GetComponent<EnemyManager>();
+    }
 
     private void Update()
     {
@@ -27,6 +33,7 @@ public class TargetScript : MonoBehaviour
 
     void Die()
     {
+        em.RemoveCurrentAmount();
         Destroy(gameObject);
         FindObjectOfType<AudioManager>().Play("BoneDying");
     }

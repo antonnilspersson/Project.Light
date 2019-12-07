@@ -10,6 +10,7 @@ public class AISwipeAttack : MonoBehaviour
     public float shieldDuration = 0.2f;
     public float damage = 10f;
     public float force = 50f;
+    public float passiveForce = 0f;
     private Vector3 knockBackDir;
     public bool attacking = true;
     private bool shield = true;
@@ -49,7 +50,7 @@ public class AISwipeAttack : MonoBehaviour
             if (!shield && playerScript != null)
             {
                 knockBackDir = player.transform.position - transform.position;
-                player.GetComponent<ImpactReceiver>().AddImpact(knockBackDir, force); 
+                player.GetComponent<ImpactReceiver>().AddImpact(knockBackDir, force);
             }
 
             if (playerScript != null && !shield && !onlyOnce)

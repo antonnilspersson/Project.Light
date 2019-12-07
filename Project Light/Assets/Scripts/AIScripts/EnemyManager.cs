@@ -22,14 +22,16 @@ public class EnemyManager : MonoBehaviour
     void Start()
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        InvokeRepeating("SpawnMinions", 1f, spawnInterval);
     }
 
     void Update()
     {
-        if(currentAmount >= maxAmount)
-            if(IsInvoking())
-                CancelInvoke();
+        SpawnMinions();
+    }
+
+    public void RemoveCurrentAmount()
+    {
+        currentAmount -= 1;
     }
 
     public GameObject[] GetEnemies()
@@ -74,19 +76,22 @@ public class EnemyManager : MonoBehaviour
 
     public void SpawnMinions()
     {
-        for(int i = 0; i < spawnPositions.Length; i++)
+        if (currentAmount < maxAmount)
         {
-            var rnd = Random.Range(0,2);
-            if(rnd == 0)
+            for (int i = 0; i < spawnPositions.Length; i++)
             {
-                SpawnSlowAI(spawnPositions[i].transform.position);
-                currentAmount += 1;
-            }
-            else
-            {
-                SpawnFastAI(spawnPositions[i].transform.position);
-                currentAmount += 1;
-            }
+                var rnd = Random.Range(0, 0);
+                if (rnd == 0)
+                {
+                    SpawnFastAI(spawnPositions[i].transform.position);
+                    currentAmount += 1;
+                }
+                else
+                {
+                    SpawnSlowAI(spawnPositions[i].transform.position);
+                    currentAmount += 1;
+                }
+            } 
         }
     }
 

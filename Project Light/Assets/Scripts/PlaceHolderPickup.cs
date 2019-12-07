@@ -16,6 +16,7 @@ public class PlaceHolderPickup : MonoBehaviour
     private int held = 0;
     private int itemLayer = 1<<11;
     private int usableLayer = 1<<12;
+    private int offset = 15;
     
     void Start()
     {
@@ -55,11 +56,19 @@ public class PlaceHolderPickup : MonoBehaviour
     {
         if (!IsUsable())
         {
-            item.transform.position += fpsCam.transform.forward * 2;
-            pos = item.transform.position;
-            pos.y += 2;
-            if(item.transform.position.y <= transform.position.y)
-                item.transform.position = pos;
+            //item.transform.position += fpsCam.transform.forward * offset;
+            //pos = item.transform.position;
+            //pos.y += 2;
+            //if (item.transform.position.y <= transform.position.y)
+            //    item.transform.position = pos;
+
+            var direction = transform.TransformDirection(Vector3.down + Vector3.forward * 100);
+            RaycastHit hit;
+            if(Physics.Raycast(fpsCam.transform.position, direction, out hit))
+                pos = hit.transform.position;
+
+            item.transform.position = pos;
+
             item.transform.parent = null;
             rb.useGravity = true;
             rb.isKinematic = false;

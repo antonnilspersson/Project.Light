@@ -9,6 +9,8 @@ tree("Attack")
 		IsInAttackRange
 		SmashIsNotOnCooldown
 		Slam
+		CheckIfPlayerHasMoved
+		StandStill
 
 tree("Chase")
 	fallback

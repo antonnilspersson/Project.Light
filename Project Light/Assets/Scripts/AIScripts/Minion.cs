@@ -28,6 +28,8 @@ public class Minion : MonoBehaviour
     private float requiredMinAngle = 3f;
     private float chargeTimer = 0f;
     private float chargeLimit = 1.5f;
+    private float standStillTimer = 0f;
+    private float standStillLimit = 0.9f;
     private float smashTimer = 0f;
     public float swipeCooldown = 2f;
     private bool attacking;
@@ -46,6 +48,7 @@ public class Minion : MonoBehaviour
     public NavMeshAgent agent;
     private GameObject player;
     private Vector3 directionToPlayer;
+    private Vector3 savedPlayerPosition;
     private Rigidbody rb;
     private Animator m_Animator;
     public bool IsShot = false;
@@ -63,7 +66,7 @@ public class Minion : MonoBehaviour
             agent.enabled = true;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         soundRange = player.GetComponent<MovementScript>().soundRange;
 
@@ -72,6 +75,7 @@ public class Minion : MonoBehaviour
         chargeTimer += Time.deltaTime;
         downTimer += Time.deltaTime;
         smashTimer += Time.deltaTime;
+        standStillTimer += Time.deltaTime;
     }
 
     // Basically acts as the GameObjects vision cone.
@@ -211,9 +215,17 @@ public class Minion : MonoBehaviour
             Task.current.Fail();
         }
 
+        var direction = player.transform.position - transform.position;
+        direction.Normalize();
+        var tempPos = player.transform.position;
+
+        NavMeshHit hit;
+            if(NavMesh.SamplePosition(tempPos, out hit, 1.0f, NavMesh.AllAreas))
+                tempPos = hit.position;
+        
         agent.enabled = true;
         agent.speed = chaseSpeed;
-        agent.SetDestination(player.transform.position);
+        agent.SetDestination(tempPos);
     }
 
     [Task]
@@ -254,6 +266,19 @@ public class Minion : MonoBehaviour
 
         if(AgentVision() && distanceToPlayer > soundRange)
             Task.current.Fail();
+    }
+
+    [Task]
+    public void CheckForWalls()
+    {
+        chargeTarget = transform.position + (transform.forward * 15);
+        var direction = chargeTarget - transform.position;
+        direction.Normalize();
+        Ray ray = new Ray(transform.position, direction);
+        if(Physics.SphereCast(ray, 2, 15, environmentLayer))
+            Task.current.Fail();
+        else
+            Task.current.Succeed();
     }
 
     [Task]
@@ -337,7 +362,7 @@ public class Minion : MonoBehaviour
     // Needs to paus navmesh agent or else its movement
     // overrides the charge. Resumes to stop the charge after set limit.
     [Task]
-    public void Charge()
+    public void OldCharge()
     {
         if(!agent.enabled)
             agent.enabled = true;
@@ -409,16 +434,17 @@ public class Minion : MonoBehaviour
             cubePos = transform.position + cubeDir * distance;
 
             spawnedCube = GameObject.Instantiate(attackCube, cubePos, cubeRot);
-            spawnedCube.transform.localScale = new Vector3(3f, 3f, 3f);
+            spawnedCube.transform.localScale = new Vector3(4f, 4f, 4f);
             spawnedCube.GetComponent<AISwipeAttack>().duration = 0.35f;
             spawnedCube.GetComponent<AISwipeAttack>().enabled = true;
-            spawnedCube.GetComponent<AISwipeAttack>().force = 20f;
+            spawnedCube.GetComponent<AISwipeAttack>().force = 10f;
             attacking = false;
         }
 
         if (spawnedCube == null)
         {
             smashTimer = 0;
+            savedPlayerPosition = player.transform.position;
             EnableAgent();
             if (m_Animator != null)
                 m_Animator.SetBool("Swipe", false);
@@ -439,5 +465,24 @@ public class Minion : MonoBehaviour
         }
         else
             Task.current.Fail();
+    }
+
+    [Task]
+    public void CheckIfPlayerHasMoved()
+    {
+        if(Vector3.Distance(savedPlayerPosition, player.transform.position) < 1)
+            Task.current.Succeed();
+        else
+            Task.current.Fail();
+    }
+
+    [Task]
+    public void StandStill()
+    {
+        if(Task.current.isStarting)
+            standStillTimer = 0;
+
+        if(standStillTimer >= standStillLimit)
+            Task.current.Succeed();
     }
 }

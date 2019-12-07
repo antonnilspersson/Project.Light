@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class TestSpawnBoss : MonoBehaviour
 {
-    public EnemyManager em;
+    public GameObject player;
 
-    void Start()
+    void Update()
     {
-        em.SpawnBossAI();
+        var direction = player.transform.position - transform.position;
+        direction.Normalize();
     }
 }

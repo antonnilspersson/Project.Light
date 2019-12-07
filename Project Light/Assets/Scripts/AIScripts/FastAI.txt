@@ -9,7 +9,8 @@ tree("Attack")
 		IsInAttackRange
 		FixRotation
 		Charge2
-		WalkOutsideOfAttackRange
+		WalkOutsideOfAttackRange	
+	
 
 tree("Chase")
 	fallback

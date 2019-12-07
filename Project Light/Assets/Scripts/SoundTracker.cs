@@ -47,11 +47,11 @@ public class SoundTracker : MonoBehaviour
         
         newTimer = Time.time;
 
-        Debug.Log(newTimer.ToString());
+        //Debug.Log(newTimer.ToString());
 
         int r = UnityEngine.Random.Range(1, 5);
 
-        Debug.Log(r.ToString());
+        //Debug.Log(r.ToString());
 
         if(newTimer - oldTimer >= 30f)
         {
