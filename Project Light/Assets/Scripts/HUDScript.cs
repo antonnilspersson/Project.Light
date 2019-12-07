@@ -9,6 +9,10 @@ public class HUDScript : MonoBehaviour
     private MovementScript playerScript;
     public Slider healthSlider;
     public Slider oxygenSlider;
+    public Text hText;
+    int health;
+    int oxygen;
+    public Text oText;
     public Image fillImage;
     float green, red;
 
@@ -23,7 +27,11 @@ public class HUDScript : MonoBehaviour
     {
         healthSlider.value = playerScript.health;
         oxygenSlider.value = playerScript.Oxygen;
+        health = (int)playerScript.health;
+        oxygen = (int)playerScript.Oxygen;
 
+        hText.text = health.ToString();
+        oText.text = oxygen.ToString();
         //OxygenColor();
     }
 
