@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class SoundTracker : MonoBehaviour
 {
-
     public int speed;
     
     public AudioClip grassWalk;
@@ -31,11 +30,11 @@ public class SoundTracker : MonoBehaviour
         jumpSource.spatialBlend = 1;
         stepsSource.spatialBlend = 1;
 
-        jumpSource.volume = 0.5f;
+        jumpSource.volume = 0.2f;
+        stepsSource.volume = 0.6f;
 
         jumpSource.clip = grassJump;
         stepsSource.clip = grassWalk;
-        
     }
 
     void PlayAmbience()
@@ -47,28 +46,21 @@ public class SoundTracker : MonoBehaviour
         
         newTimer = Time.time;
 
-        //Debug.Log(newTimer.ToString());
+        int r = UnityEngine.Random.Range(1, 4);
 
-        int r = UnityEngine.Random.Range(1, 5);
-
-        //Debug.Log(r.ToString());
-
-        if(newTimer - oldTimer >= 30f)
+        if(newTimer - oldTimer >= 180f)
         {
             if (r == 1)
                 FindObjectOfType<AudioManager>().Play("Ambience1");
             else if (r == 2)
-                FindObjectOfType<AudioManager>().Play("Ambience2", 0f, 0.7f);
+                FindObjectOfType<AudioManager>().Play("Ambience2");
             else if (r == 3)
-                FindObjectOfType<AudioManager>().Play("Ambience3");
-            else if (r == 4)
                 FindObjectOfType<AudioManager>().Play("Ambience4");
             else
                 Debug.Log("Something went wrong in SOUNDTRACKER");
             
             oldTimer = 0f;
         }
-        
     }
 
     void Update()

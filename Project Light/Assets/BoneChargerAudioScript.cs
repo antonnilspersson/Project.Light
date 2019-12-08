@@ -19,7 +19,6 @@ public class BoneChargerAudioScript : MonoBehaviour
 
     void Start()
     {
-
         BoneWalkAudio.clip = BoneWalk;
         BoneWalkAudio.loop = true;
         BoneWalkAudio.volume = 1.0f;
