@@ -26,16 +26,16 @@ public class PlantSeed : MonoBehaviour
     {
         if (IsLookingAtSpot())
         {
-            if (IsSeedHeld())
+            Debug.Log("Worked!");
+            if (Inventory.seeds >= 1)
             {
                 Debug.Log("worked!");
-                if (Input.GetKeyDown(KeyCode.Q) && !spawned)
+                if (Input.GetKeyDown(KeyCode.E) && !spawned)
                 {
                     spawnedSeed = (GameObject)Instantiate(seed, transform.position, Quaternion.identity);
                     spawnedSeed.GetComponent<LightAdjuster>().isPlanted = true;
-                    Destroy(preSeed);
                     pm.AddCurrentPlanted(1);
-                    PlaceHolderPickup.PickedUp = false;
+                    Inventory.seeds -= 1;
                     spawned = true;
                 }  
             }

@@ -87,6 +87,11 @@ public class LootScript : MonoBehaviour
             healthS.health += 50;
             Destroy(gameObject);
         }
+        if(itemName == "Seed")
+        {
+            Inventory.seeds += 1;
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
