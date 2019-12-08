@@ -11,7 +11,11 @@ public class Inventory : MonoBehaviour
     public int gun = 0;
     public int rifle = 0;
     public int crossbow = 0;
+    public static int seeds = 0;
     public static int water = 0;
+
+    public Text waterText;
+    public Text seedsText;
 
     void Update()
     {
@@ -23,5 +27,8 @@ public class Inventory : MonoBehaviour
 
         if (cbAmmoTotal < 0)
             cbAmmoTotal = 0;
+
+        waterText.text = ":  " + water.ToString();
+        seedsText.text = ":  " + seeds.ToString();
     }
 }
