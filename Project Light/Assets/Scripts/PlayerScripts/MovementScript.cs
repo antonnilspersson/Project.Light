@@ -22,6 +22,7 @@ public class MovementScript : MonoBehaviour
     bool isJumping;
     bool isDodging;
     public static bool isDead = false;
+    public static bool Tutorial = false;
     #endregion
 
     #region Movement Variables
@@ -100,24 +101,27 @@ public class MovementScript : MonoBehaviour
     {
         if(!isDead)
         {
-            float hInput = Input.GetAxis("Horizontal");
-            float vInput = Input.GetAxis("Vertical");
+            if(!Tutorial)
+            {
+                float hInput = Input.GetAxis("Horizontal");
+                float vInput = Input.GetAxis("Vertical");
 
-            Vector3 forwardMovement = transform.forward * vInput;
-            rightMovement = transform.right * hInput;
+                Vector3 forwardMovement = transform.forward * vInput;
+                rightMovement = transform.right * hInput;
 
-            charController.SimpleMove(Vector3.ClampMagnitude(forwardMovement + rightMovement, 1.0f) * movementSpeed);
+                charController.SimpleMove(Vector3.ClampMagnitude(forwardMovement + rightMovement, 1.0f) * movementSpeed);
 
-            if ((vInput != 0 || hInput != 0) && OnSlope())
-                charController.Move(Vector3.down * charController.height / 2 * slopeForce * Time.deltaTime);
+                if ((vInput != 0 || hInput != 0) && OnSlope())
+                    charController.Move(Vector3.down * charController.height / 2 * slopeForce * Time.deltaTime);
 
-            if (vInput == 0 && hInput != 0)
-                DodgeInput();
-            else
-                JumpInput();
+                if (vInput == 0 && hInput != 0)
+                    DodgeInput();
+                else
+                    JumpInput();
 
-            SetMovementSpeed();
-            Crouching();
+                SetMovementSpeed();
+                Crouching();
+            }
         }
     }
 

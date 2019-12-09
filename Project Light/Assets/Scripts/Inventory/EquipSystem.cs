@@ -10,7 +10,7 @@ public class EquipSystem : MonoBehaviour
     public PlaceHolderPickup plant;
     Inventory ammo;
 
-    private int equipSlot = 1;
+    public int equipSlot = 1;
 
     private void Start()
     {
