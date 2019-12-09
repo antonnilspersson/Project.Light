@@ -19,6 +19,8 @@ public class BoneChargerAudioScript : MonoBehaviour
 
     void Start()
     {
+
+
         BoneWalkAudio.clip = BoneWalk;
         BoneWalkAudio.loop = true;
         BoneWalkAudio.volume = 1.0f;
@@ -32,17 +34,20 @@ public class BoneChargerAudioScript : MonoBehaviour
 
     void Update()
     {
-        charging = BoneScript.attacking;
+        charging = this.gameObject.GetComponent<Minion>().bigBoiChargyChargy;
+        Debug.Log("'Big boi is charging' ---> " + charging.ToString());
 
         if (charging && hostile)
         {
             BoneChargeAudio.Play();
+            BoneWalkAudio.Stop();
             hostile = false;
 
         }
         else if (!charging && !hostile)
         {
             BoneWalkAudio.Play();
+            BoneChargeAudio.Stop();
             hostile = true;
         }
 

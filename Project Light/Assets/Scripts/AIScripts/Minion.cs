@@ -6,6 +6,9 @@ using UnityEngine.AI;
 
 public class Minion : MonoBehaviour
 {
+    //Oliwers väldigt invecklad variabel
+    public bool bigBoiChargyChargy = false;
+
     // Wander Variables
     public Vector3 wanderTarget;
     private float wanderDistance = 20f;
@@ -280,10 +283,15 @@ public class Minion : MonoBehaviour
         else
             Task.current.Succeed();
     }
+    
 
     [Task]
     public void Charge2()
     {
+        if (Task.current.status == Status.Running) //oliwers kod
+            bigBoiChargyChargy = true;
+        else
+            bigBoiChargyChargy = false; 
         
         if (Task.current.isStarting)
         {
@@ -308,6 +316,8 @@ public class Minion : MonoBehaviour
         {
             if (m_Animator != null)
                 m_Animator.SetBool("Charge2", false);
+
+            bigBoiChargyChargy = false;
             Task.current.Fail();
         }
 
@@ -315,6 +325,8 @@ public class Minion : MonoBehaviour
         {
             if (m_Animator != null)
                 m_Animator.SetBool("Charge2", false);
+
+            bigBoiChargyChargy = false;
             Task.current.Fail();
         }
 
@@ -325,6 +337,8 @@ public class Minion : MonoBehaviour
             downTimer = 0f;
             if (m_Animator != null)
                 m_Animator.SetBool("Charge2", false);
+
+            bigBoiChargyChargy = false;
             Task.current.Succeed(); 
         }
     }
