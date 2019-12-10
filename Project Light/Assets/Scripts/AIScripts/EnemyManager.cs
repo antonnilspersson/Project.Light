@@ -22,6 +22,7 @@ public class EnemyManager : MonoBehaviour
     void Start()
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        Cursor.visible = false;
     }
 
     void Update()
@@ -80,7 +81,7 @@ public class EnemyManager : MonoBehaviour
         {
             for (int i = 0; i < spawnPositions.Length; i++)
             {
-                var rnd = Random.Range(0, 0);
+                var rnd = Random.Range(0, 2);
                 if (rnd == 0)
                 {
                     SpawnFastAI(spawnPositions[i].transform.position);

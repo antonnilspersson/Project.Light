@@ -20,4 +20,9 @@ public class DialogueTrigger : MonoBehaviour
     {
         FindObjectOfType<DialogueScript>().EndDialogue();
     }
+
+    public void ClearDialogue()
+    {
+        FindObjectOfType<DialogueScript>().ClearDialogue();
+    }
 }

@@ -37,10 +37,14 @@ public class triggerDia : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if(col.gameObject.tag == "Player")
+        if (!enter)
         {
-            enter = true;
-            trigger.TriggerDialogue();
+            if (col.gameObject.tag == "Player")
+            {
+                enter = true;
+                trigger.ClearDialogue();
+                trigger.TriggerDialogue();
+            } 
         }
     }
 }

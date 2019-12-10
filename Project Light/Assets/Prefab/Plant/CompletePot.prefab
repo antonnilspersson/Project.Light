@@ -14,7 +14,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!64 &2762808964534280077
 MeshCollider:
@@ -42,14 +42,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ead9c0c448d544cb3f5b1f7c11faba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxWater: 100
-  minWater: 0
   hasWater: 1
   smallSeed: {fileID: 4821592124635914375, guid: 1ff6e638b4ebea54b8f471606352c485,
     type: 3}
   groupSize: 1
-  seedRadius: 3
+  seedRadius: 2
   personalSeedRadius: 2
+--- !u!114 &487052152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8717999579274864031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ba5ab4d4c5176148a1896121648b378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 4603994050393539757}
+  player: {fileID: 0}
+  maxRange: 20
+  minRange: 5
 --- !u!1001 &776169433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57,6 +71,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7340341584303584697}
     m_Modifications:
+    - target: {fileID: 2695121259224944972, guid: d21364aef17e089499c13f392a0dee44,
+        type: 3}
+      propertyPath: m_Name
+      value: Plant hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 2912252654039029626, guid: d21364aef17e089499c13f392a0dee44,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -126,11 +145,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 6.399761
-      objectReference: {fileID: 0}
-    - target: {fileID: 2695121259224944972, guid: d21364aef17e089499c13f392a0dee44,
-        type: 3}
-      propertyPath: m_Name
-      value: Plant hitbox
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d21364aef17e089499c13f392a0dee44, type: 3}
@@ -141,6 +155,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7340341584303584697}
     m_Modifications:
+    - target: {fileID: 8717999578843991683, guid: 6235fb5eafa68c940a1b32c11e356a5b,
+        type: 3}
+      propertyPath: m_Name
+      value: Plant Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717999578843991683, guid: 6235fb5eafa68c940a1b32c11e356a5b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7372475983428185037, guid: 6235fb5eafa68c940a1b32c11e356a5b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -210,16 +234,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 6.399761
-      objectReference: {fileID: 0}
-    - target: {fileID: 8717999578843991683, guid: 6235fb5eafa68c940a1b32c11e356a5b,
-        type: 3}
-      propertyPath: m_Name
-      value: Plant Light
-      objectReference: {fileID: 0}
-    - target: {fileID: 8717999578843991683, guid: 6235fb5eafa68c940a1b32c11e356a5b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4603994050265526193, guid: 6235fb5eafa68c940a1b32c11e356a5b,
         type: 3}
@@ -241,8 +255,25 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4603994050265526193, guid: 6235fb5eafa68c940a1b32c11e356a5b,
+        type: 3}
+      propertyPath: m_Range
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6235fb5eafa68c940a1b32c11e356a5b, type: 3}
+--- !u!1 &8717999579274864031 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8717999578843991683, guid: 6235fb5eafa68c940a1b32c11e356a5b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1001302812}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &4603994050393539757 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 4603994050265526193, guid: 6235fb5eafa68c940a1b32c11e356a5b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1001302812}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2743486453303354601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -265,20 +296,25 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Lootcube
       objectReference: {fileID: 0}
+    - target: {fileID: 8104280208072616653, guid: a35f3d610e8b5a74db460edafe6951bd,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6782315749447920642, guid: a35f3d610e8b5a74db460edafe6951bd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -196.24316
+      value: -323.63
       objectReference: {fileID: 0}
     - target: {fileID: 6782315749447920642, guid: a35f3d610e8b5a74db460edafe6951bd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.7
+      value: 25.34
       objectReference: {fileID: 0}
     - target: {fileID: 6782315749447920642, guid: a35f3d610e8b5a74db460edafe6951bd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 184.10788
+      value: 34.9
       objectReference: {fileID: 0}
     - target: {fileID: 6782315749447920642, guid: a35f3d610e8b5a74db460edafe6951bd,
         type: 3}
@@ -356,6 +392,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8650696188768504043}
     m_Modifications:
+    - target: {fileID: 6515856303399623342, guid: 11bbd2da0d33fc34b8db9b3bec705b50,
+        type: 3}
+      propertyPath: m_Name
+      value: Plant
+      objectReference: {fileID: 0}
     - target: {fileID: 1725006079406490576, guid: 11bbd2da0d33fc34b8db9b3bec705b50,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -411,12 +452,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6515856303399623342, guid: 11bbd2da0d33fc34b8db9b3bec705b50,
-        type: 3}
-      propertyPath: m_Name
-      value: Plant
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8622480059822618782, guid: 11bbd2da0d33fc34b8db9b3bec705b50, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 11bbd2da0d33fc34b8db9b3bec705b50, type: 3}
 --- !u!4 &7340341584303584697 stripped
 Transform:

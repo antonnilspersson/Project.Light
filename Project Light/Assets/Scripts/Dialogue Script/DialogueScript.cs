@@ -66,4 +66,10 @@ public class DialogueScript : MonoBehaviour
     {
         animator.SetBool("IsOpen", false);
     }
+
+    public void ClearDialogue()
+    {
+        if(sentences != null)
+            sentences.Clear();
+    }
 }
