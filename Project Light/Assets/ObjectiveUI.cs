@@ -26,9 +26,9 @@ public class ObjectiveUI : MonoBehaviour
             trainInt = 1;
 
         objectives[0].text = "Start: " + somethingInt + "/1";
-        objectives[1].text = "Warehouse: " + trainInt + "/1";
+        objectives[1].text = "Warehouse: " + warehouseInt + "/1";
         objectives[2].text = "Statue: " + statueInt + "/1";
-        objectives[3].text = "Trainyard: " + warehouseInt + "/1";
+        objectives[3].text = "Trainyard: " + trainInt + "/1";
         objectives[4].text = "";
 
 

@@ -8,6 +8,10 @@ public class TargetScript : MonoBehaviour
 
     public float health = 100f;
 
+    float dTimer = 0;
+    float dTimeInterval = 2;
+    public bool isDead;
+
     void Start()
     {
         em = GameObject.FindGameObjectWithTag("GM").GetComponent<EnemyManager>();
@@ -33,9 +37,17 @@ public class TargetScript : MonoBehaviour
 
     void Die()
     {
-        em.RemoveCurrentAmount();
-        Destroy(gameObject);
         FindObjectOfType<AudioManager>().Play("BoneDying");
+        isDead = true;
+
+        dTimer += Time.deltaTime;
+        if (dTimer >= dTimeInterval)
+        {
+            em.RemoveCurrentAmount();
+            Destroy(gameObject);
+        }
+
+        
     }
 
     private void OnCollisionEnter(Collision collision)

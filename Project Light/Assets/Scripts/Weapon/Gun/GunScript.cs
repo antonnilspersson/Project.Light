@@ -60,12 +60,12 @@ public class GunScript : MonoBehaviour
 
         if (WeaponType == "Revolver")
         {
-            ammoText.text = currentAmmo + " / " + ammo.gAmmoTotal.ToString();
+            ammoText.text = currentAmmo + " / " + clipSize + " " + ammo.gAmmoTotal.ToString();
         }
 
         if (WeaponType == "Rifle")
         {
-            ammoText.text = currentAmmo + " / " + ammo.rAmmoTotal.ToString();
+            ammoText.text = currentAmmo + " / " + clipSize + " " + ammo.rAmmoTotal.ToString();
         }
     }
 
