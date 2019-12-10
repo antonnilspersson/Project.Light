@@ -17,6 +17,8 @@ public class PlaceHolderPickup : MonoBehaviour
     private int itemLayer = 1<<11;
     private int usableLayer = 1<<12;
     private int offset = 15;
+    public LayerMask mask;
+    public bool invertMask;
     
     void Start()
     {
@@ -62,18 +64,22 @@ public class PlaceHolderPickup : MonoBehaviour
             //if (item.transform.position.y <= transform.position.y)
             //    item.transform.position = pos;
 
-            var direction = transform.TransformDirection(Vector3.down + Vector3.forward * 100);
+            LayerMask newMask = ~(invertMask ? ~mask.value : mask.value);
             RaycastHit hit;
-            if(Physics.Raycast(fpsCam.transform.position, direction, out hit))
-                pos = hit.transform.position;
+            if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, 1, newMask))
+            {
 
-            item.transform.position = pos;
+            }
+            else
+            {
+                            //item.transform.rotation = Quaternion.identity;
+                item.transform.parent = null;
+                rb.useGravity = true;
+                rb.isKinematic = false;
+                item.GetComponent<MeshCollider>().enabled = true;
+                PickedUp = false;
+            }
 
-            item.transform.parent = null;
-            rb.useGravity = true;
-            rb.isKinematic = false;
-            item.GetComponent<MeshCollider>().enabled = true;
-            PickedUp = false;
         }
     }
 

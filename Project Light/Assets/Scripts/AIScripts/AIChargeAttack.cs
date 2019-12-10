@@ -53,7 +53,6 @@ public class AIChargeAttack : MonoBehaviour
                 if (checkOnce)
                 {
                     playerScript.health -= damage;
-                    Debug.Log("Health: " + (int)playerScript.health);
                     checkOnce = false;
                 } 
 

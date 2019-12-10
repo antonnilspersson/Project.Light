@@ -6,11 +6,7 @@ using UnityEngine.Events;
 public class WaterInteraction : MonoBehaviour
 {
     // Water Variables
-    public float MaxWater = 100f;
-    public float minWater = 0f;
-    private float currentWater = 0f;
     public bool hasWater;
-    private int grade = 0;
 
     // Common Variables
     private bool triggered;
@@ -45,14 +41,11 @@ public class WaterInteraction : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.G))
             {
-                if (Inventory.water > 0 && currentWater <= 100)
+                if (Inventory.water > 0)
                 {
-                    currentWater += 20;
+                    Inventory.seeds += 1;
                     Inventory.water -= 1;
-                    GradeAndSeedSpawn();
                 }
-                Debug.Log("Water level: " + currentWater + "%");
-                Debug.Log("Grade: " + grade);
             }
         }
     }
@@ -87,16 +80,7 @@ public class WaterInteraction : MonoBehaviour
 
     void GradeAndSeedSpawn()
     {
-        if(currentWater + 20 > MaxWater)
-        {
-            var tempWater = currentWater - MaxWater;
-            currentWater = minWater + tempWater;
-            if(grade < 3)
-            {
-                grade += 1;
-                spawnSeeds.Invoke();
-            }
-        }
+        spawnSeeds.Invoke();
     }
 
     private void OnTriggerEnter(Collider other)

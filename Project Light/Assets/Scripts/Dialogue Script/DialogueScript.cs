@@ -20,7 +20,7 @@ public class DialogueScript : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return))
         {
-            EndDialogue();
+            //EndDialogue();
         }
     }
 
@@ -58,11 +58,11 @@ public class DialogueScript : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.007f);
         }
     }
 
-    void EndDialogue()
+    public void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
     }

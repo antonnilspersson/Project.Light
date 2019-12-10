@@ -26,10 +26,8 @@ public class PlantSeed : MonoBehaviour
     {
         if (IsLookingAtSpot())
         {
-            Debug.Log("Worked!");
             if (Inventory.seeds >= 1)
             {
-                Debug.Log("worked!");
                 if (Input.GetKeyDown(KeyCode.E) && !spawned)
                 {
                     spawnedSeed = (GameObject)Instantiate(seed, transform.position, Quaternion.identity);

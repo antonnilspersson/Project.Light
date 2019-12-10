@@ -10,4 +10,14 @@ public class DialogueTrigger : MonoBehaviour
     {
         FindObjectOfType<DialogueScript>().StartDialogue(dialogue);
     }
+
+    public void TriggerNextSentence()
+    {
+        FindObjectOfType<DialogueScript>().DisplayNextSentence();
+    }
+
+    public void EndDialogue()
+    {
+        FindObjectOfType<DialogueScript>().EndDialogue();
+    }
 }
