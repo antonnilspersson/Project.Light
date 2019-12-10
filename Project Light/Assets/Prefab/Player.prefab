@@ -11056,6 +11056,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5549741375408678216, guid: 4839691396f9d354b991474a78d6ef0b,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1621451483596283662}
+    - target: {fileID: 5549741375408678216, guid: 4839691396f9d354b991474a78d6ef0b,
+        type: 3}
+      propertyPath: playerBody
+      value: 
+      objectReference: {fileID: 1621451483596283661}
     - target: {fileID: 3761989477959128643, guid: 4839691396f9d354b991474a78d6ef0b,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -11131,20 +11141,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5549741375408678216, guid: 4839691396f9d354b991474a78d6ef0b,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1621451483596283662}
-    - target: {fileID: 5549741375408678216, guid: 4839691396f9d354b991474a78d6ef0b,
-        type: 3}
-      propertyPath: playerBody
-      value: 
-      objectReference: {fileID: 1621451483596283661}
     - target: {fileID: 9175358836652832261, guid: 4839691396f9d354b991474a78d6ef0b,
         type: 3}
       propertyPath: m_Name
       value: Inventory
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858260836192216190, guid: 4839691396f9d354b991474a78d6ef0b,
+        type: 3}
+      propertyPath: gAmmoTotal
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858260836192216190, guid: 4839691396f9d354b991474a78d6ef0b,
+        type: 3}
+      propertyPath: rAmmoTotal
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858260836192216190, guid: 4839691396f9d354b991474a78d6ef0b,
+        type: 3}
+      propertyPath: cbAmmoTotal
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858260836192216190, guid: 4839691396f9d354b991474a78d6ef0b,
+        type: 3}
+      propertyPath: gun
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1858260836192216190, guid: 4839691396f9d354b991474a78d6ef0b,
         type: 3}

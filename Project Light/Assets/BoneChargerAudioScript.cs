@@ -35,7 +35,7 @@ public class BoneChargerAudioScript : MonoBehaviour
     void Update()
     {
         charging = this.gameObject.GetComponent<Minion>().bigBoiChargyChargy;
-        Debug.Log("'Big boi is charging' ---> " + charging.ToString());
+        //Debug.Log("'Big boi is charging' ---> " + charging.ToString());
 
         if (charging && hostile)
         {

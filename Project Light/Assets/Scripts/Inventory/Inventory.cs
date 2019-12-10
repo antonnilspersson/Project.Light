@@ -28,6 +28,15 @@ public class Inventory : MonoBehaviour
         if (cbAmmoTotal < 0)
             cbAmmoTotal = 0;
 
+        if (gun > 1)
+            gun = 1;
+
+        if (rifle > 1)
+            rifle = 1;
+
+        if (crossbow > 1)
+            crossbow = 1;
+
         waterText.text = ":  " + water.ToString();
         seedsText.text = ":  " + seeds.ToString();
     }
