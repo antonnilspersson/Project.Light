@@ -11,6 +11,7 @@ public class MovementScript : MonoBehaviour
     PlantManager pm;
     PlantSeed ps;
     public int hDeath;
+    public bool isCrouching = false;
 
     private Rigidbody rb;
 
@@ -233,12 +234,18 @@ public class MovementScript : MonoBehaviour
     #region Crouch Method
     void Crouching()
     {
-         //Vector3 centerPoint = charController.center = new Vector3(0, charController.height / 2, 0);
+        //Vector3 centerPoint = charController.center = new Vector3(0, charController.height / 2, 0);
 
         if (Input.GetKey(KeyCode.LeftControl))  //SKAPAR EN BUG FÖR ONSLOPE()
+        {
             charController.height = crouchHeight;
+            isCrouching = true;
+        }
         else
+        {
             charController.height = originalHeight;
+            isCrouching = false;
+        }
     }
     #endregion
     #endregion

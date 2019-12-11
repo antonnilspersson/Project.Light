@@ -47,7 +47,7 @@ public class Minion : MonoBehaviour
     private int allLayerMask = -1;
     private int environmentLayer = 1 << 10;
     private int playerLayer = 1 << 9;
-    private float distanceToPlayer;
+    public float distanceToPlayer;
     public NavMeshAgent agent;
     private GameObject player;
     private Vector3 directionToPlayer;

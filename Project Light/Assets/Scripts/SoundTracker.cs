@@ -7,17 +7,21 @@ public class SoundTracker : MonoBehaviour
 {
     public int speed;
     
-    public AudioClip grassWalk;
+    public AudioClip WalkFast;
+    public AudioClip WalkSlow;
     public AudioClip grassJump;
 
     public AudioSource jumpSource;
     public AudioSource stepsSource;
+    public AudioSource crouchSource;
 
     public bool[] WASD = new bool[4];
     public bool walking = false;
 
     private float oldTimer = 0f;
     private float newTimer = 0f;
+
+    private bool isCrouching = false;
     
 
     void Start()
@@ -29,44 +33,73 @@ public class SoundTracker : MonoBehaviour
 
         jumpSource.spatialBlend = 1;
         stepsSource.spatialBlend = 1;
+        crouchSource.spatialBlend = 1;
 
-        jumpSource.volume = 0.2f;
-        stepsSource.volume = 0.6f;
+        jumpSource.volume = 0.1f;
+        stepsSource.volume = 0.1f;
+        crouchSource.volume = 0.05f;
 
         jumpSource.clip = grassJump;
-        stepsSource.clip = grassWalk;
-    }
-
-    void PlayAmbience()
-    {
-        if(oldTimer == 0f)
-        {
-            oldTimer = Time.time;
-        }
-        
-        newTimer = Time.time;
-
-        int r = UnityEngine.Random.Range(1, 4);
-
-        if(newTimer - oldTimer >= 180f)
-        {
-            if (r == 1)
-                FindObjectOfType<AudioManager>().Play("Ambience1");
-            else if (r == 2)
-                FindObjectOfType<AudioManager>().Play("Ambience2");
-            else if (r == 3)
-                FindObjectOfType<AudioManager>().Play("Ambience4");
-            else
-                Debug.Log("Something went wrong in SOUNDTRACKER");
-            
-            oldTimer = 0f;
-        }
+        stepsSource.clip = WalkFast;
+        crouchSource.clip = WalkSlow;
     }
 
     void Update()
     {
+        isCrouching = this.gameObject.GetComponent<MovementScript>().isCrouching;
+
+        CheckForMovement();
+
         PlayAmbience();
 
+        CheckForWalk();
+
+        CheckForJump();
+        
+        MovementChange();
+    }
+
+    void PlayAmbience()
+    {
+        if (oldTimer == 0f)
+        {
+            oldTimer = Time.time;
+        }
+
+        newTimer = Time.time;
+
+        int r = UnityEngine.Random.Range(1, 3);
+
+        if (newTimer - oldTimer >= 180f)
+        {
+            if (r == 1)
+                FindObjectOfType<AudioManager>().Play("Ambience1");
+            else if (r == 2)
+                FindObjectOfType<AudioManager>().Play("Ambience4");
+            else
+                Debug.Log("Something went wrong in SOUNDTRACKER");
+
+            oldTimer = 0f;
+        }
+    }
+
+    void MovementChange()
+    {
+        if(stepsSource.isPlaying && isCrouching)
+        {
+            crouchSource.Play();
+            stepsSource.Stop();
+        }
+
+        if(crouchSource.isPlaying && !isCrouching)
+        {
+            crouchSource.Stop();
+            stepsSource.Play();
+        }
+    }
+
+    void CheckForMovement()
+    {
         if (Input.GetKeyDown(KeyCode.W))
         {
             WASD[0] = true;
@@ -102,36 +135,78 @@ public class SoundTracker : MonoBehaviour
         {
             WASD[3] = false;
         }
+    }
 
+    void CheckForJump()
+    {
         if (Input.GetKeyDown(KeyCode.Space) && !jumpSource.isPlaying) //JUMPING CHECK
         {
-            jumpSource.PlayDelayed(0.7f);
+            jumpSource.PlayDelayed(0.5f);
         }
-
+    }
+    
+    void CheckForWalk()
+    {
         if (Input.GetKeyDown(KeyCode.W) && !stepsSource.isPlaying) // WALKING CHECKS
         {
-            stepsSource.Play();
+            if(isCrouching)
+            {
+                stepsSource.Stop();
+                crouchSource.Play();
+            }
+            else if(!isCrouching)
+            {
+                stepsSource.Play();
+                crouchSource.Stop();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.A) && !stepsSource.isPlaying) //-||-
         {
-            stepsSource.Play();
+            if (isCrouching)
+            {
+                stepsSource.Stop();
+                crouchSource.Play();
+            }
+            else
+            {
+                stepsSource.Play();
+                crouchSource.Stop();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.S) && !stepsSource.isPlaying)  //-||-
         {
-            stepsSource.Play();
+            if (isCrouching)
+            {
+                stepsSource.Stop();
+                crouchSource.Play();
+            }
+            else
+            {
+                stepsSource.Play();
+                crouchSource.Stop();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.D) && !stepsSource.isPlaying) //-||-
         {
-            stepsSource.Play();
+            if (isCrouching)
+            {
+                stepsSource.Stop();
+                crouchSource.Play();
+            }
+            else
+            {
+                stepsSource.Play();
+                crouchSource.Stop();
+            }
         }
 
         if (WASD[0] == false && WASD[1] == false && WASD[2] == false && WASD[3] == false) //CHECK IF NOT WALKING
         {
             stepsSource.Stop();
+            crouchSource.Stop();
         }
-
     }
 }
