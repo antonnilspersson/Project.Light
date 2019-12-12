@@ -226,6 +226,11 @@ public class Minion : MonoBehaviour
             if(NavMesh.SamplePosition(tempPos, out hit, 1.0f, NavMesh.AllAreas))
                 tempPos = hit.position;
         
+        NavMeshPath path = new NavMeshPath();
+        NavMesh.CalculatePath(transform.position, tempPos, NavMesh.AllAreas, path);
+        if(path.status == NavMeshPathStatus.PathInvalid || path.status == NavMeshPathStatus.PathPartial)
+            Task.current.Fail();
+        
         agent.enabled = true;
         agent.speed = chaseSpeed;
         agent.SetDestination(tempPos);

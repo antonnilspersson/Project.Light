@@ -143,6 +143,16 @@ PrefabInstance:
       propertyPath: itemName
       value: cbAmmo
       objectReference: {fileID: 0}
+    - target: {fileID: 2314324498619341054, guid: c426c0cabc0823c49972f31f52b2e226,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2314324498619341054, guid: c426c0cabc0823c49972f31f52b2e226,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1858756039, guid: c426c0cabc0823c49972f31f52b2e226, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
