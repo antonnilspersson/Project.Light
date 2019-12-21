@@ -4212,6 +4212,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RevolverPickup
       objectReference: {fileID: 0}
+    - target: {fileID: 1524917165908056533, guid: abba6afa63dc85c4eadab5a183906c52,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 630272003135047806, guid: abba6afa63dc85c4eadab5a183906c52,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4729,6 +4734,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: waterBottle (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4136699501172159592, guid: e28f7cd9e619df546b8973e292ed13b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 993559023124447495, guid: e28f7cd9e619df546b8973e292ed13b4,
         type: 3}
@@ -5935,6 +5945,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 295011573}
   m_CullTransparentMesh: 0
+--- !u!1 &298825011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 298825012}
+  - component: {fileID: 298825014}
+  - component: {fileID: 298825013}
+  m_Layer: 5
+  m_Name: pText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &298825012
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298825011}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1679344762}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 19.4}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &298825013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298825011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: New Text
+--- !u!222 &298825014
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298825011}
+  m_CullTransparentMesh: 0
 --- !u!1001 &300893772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6379,6 +6466,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cbAmmo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8511711584888013082, guid: 0b7a64587265a7747bc9f83ae5d94450,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4809556859583378549, guid: 0b7a64587265a7747bc9f83ae5d94450,
         type: 3}
@@ -7311,6 +7403,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CrossbowPickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828077547053488639, guid: 7f8ab638d2f754d4ab2a5639de054c2a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2395911633019308148, guid: 7f8ab638d2f754d4ab2a5639de054c2a,
         type: 3}
@@ -9387,6 +9484,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrossbowPickup (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5828077547053488639, guid: 7f8ab638d2f754d4ab2a5639de054c2a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2395911633019308148, guid: 7f8ab638d2f754d4ab2a5639de054c2a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9750,6 +9852,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: gAmmo (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6790273057627359489, guid: c426c0cabc0823c49972f31f52b2e226,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7681649696864582766, guid: c426c0cabc0823c49972f31f52b2e226,
         type: 3}
@@ -10865,6 +10972,21 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 249032747}
+    - target: {fileID: 6227068220941766180, guid: 87190f0d6abd14a44b22fff7fe295612,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1776648475515495173, guid: 87190f0d6abd14a44b22fff7fe295612,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4603994050393539757, guid: 87190f0d6abd14a44b22fff7fe295612,
+        type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87190f0d6abd14a44b22fff7fe295612, type: 3}
 --- !u!4 &487724994 stripped
@@ -15463,6 +15585,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: cbAmmo (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8511711584888013082, guid: 0b7a64587265a7747bc9f83ae5d94450,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4809556859583378549, guid: 0b7a64587265a7747bc9f83ae5d94450,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16567,6 +16694,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: gAmmo (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6790273057627359489, guid: c426c0cabc0823c49972f31f52b2e226,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7681649696864582766, guid: c426c0cabc0823c49972f31f52b2e226,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16903,6 +17035,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cbAmmo (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8511711584888013082, guid: 0b7a64587265a7747bc9f83ae5d94450,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4809556859583378549, guid: 0b7a64587265a7747bc9f83ae5d94450,
         type: 3}
@@ -18479,6 +18616,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: waterBottle (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4136699501172159592, guid: e28f7cd9e619df546b8973e292ed13b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 993559023124447495, guid: e28f7cd9e619df546b8973e292ed13b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19322,6 +19464,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: waterBottle (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4136699501172159592, guid: e28f7cd9e619df546b8973e292ed13b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 993559023124447495, guid: e28f7cd9e619df546b8973e292ed13b4,
         type: 3}
@@ -21438,6 +21585,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: gAmmo
       objectReference: {fileID: 0}
+    - target: {fileID: 6790273057627359489, guid: c426c0cabc0823c49972f31f52b2e226,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7681649696864582766, guid: c426c0cabc0823c49972f31f52b2e226,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22121,6 +22273,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: waterBottle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4136699501172159592, guid: e28f7cd9e619df546b8973e292ed13b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 993559023124447495, guid: e28f7cd9e619df546b8973e292ed13b4,
         type: 3}
@@ -22880,6 +23037,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cbAmmo (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8511711584888013082, guid: 0b7a64587265a7747bc9f83ae5d94450,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4809556859583378549, guid: 0b7a64587265a7747bc9f83ae5d94450,
         type: 3}
@@ -24000,6 +24162,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6224066660206101012, guid: 04fcf1bc59f4e5c49aab73a04808fcab,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.0669968
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112216411828889457, guid: 04fcf1bc59f4e5c49aab73a04808fcab,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.967
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04fcf1bc59f4e5c49aab73a04808fcab, type: 3}
 --- !u!1 &1107295475 stripped
@@ -24832,6 +25004,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: gAmmo (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6790273057627359489, guid: c426c0cabc0823c49972f31f52b2e226,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7681649696864582766, guid: c426c0cabc0823c49972f31f52b2e226,
         type: 3}
@@ -26191,6 +26368,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: gAmmo
       objectReference: {fileID: 0}
+    - target: {fileID: 6790273057627359489, guid: c426c0cabc0823c49972f31f52b2e226,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7681649696864582766, guid: c426c0cabc0823c49972f31f52b2e226,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26796,6 +26978,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: waterBottle (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4136699501172159592, guid: e28f7cd9e619df546b8973e292ed13b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 993559023124447495, guid: e28f7cd9e619df546b8973e292ed13b4,
         type: 3}
@@ -32034,6 +32221,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: cbAmmo
       objectReference: {fileID: 0}
+    - target: {fileID: 8511711584888013082, guid: 0b7a64587265a7747bc9f83ae5d94450,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4809556859583378549, guid: 0b7a64587265a7747bc9f83ae5d94450,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33165,6 +33357,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4563540709522315842, guid: 2b99e991b569ec649b1ff16ab80ff164,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 25.369
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563540709522315842, guid: 2b99e991b569ec649b1ff16ab80ff164,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -32.183
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b99e991b569ec649b1ff16ab80ff164, type: 3}
 --- !u!1001 &1507761330
@@ -34156,6 +34358,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cbAmmo (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8511711584888013082, guid: 0b7a64587265a7747bc9f83ae5d94450,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4809556859583378549, guid: 0b7a64587265a7747bc9f83ae5d94450,
         type: 3}
@@ -36581,6 +36788,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87bfeee8092e14fa3ac7c13673224170, type: 3}
+--- !u!224 &1658926273 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8815426150803162950, guid: f7f09b68b2d393e4e9138151e44cbd6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1850413703}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1659209565 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400012, guid: dceeca3e930a413458913fd2f889e527,
@@ -37045,6 +37258,60 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c55afdc4a8a3b4890b07cc7d176510bb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9485b0c79d11e2e4d0007da98d76c639, type: 3}
+--- !u!1 &1679344761
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1679344762}
+  - component: {fileID: 1679344763}
+  m_Layer: 5
+  m_Name: Tooltip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1679344762
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679344761}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 298825012}
+  - {fileID: 1830233463}
+  m_Father: {fileID: 1658926273}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 88}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1679344763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679344761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecf7b3f36f488a1489ef84e9bb438c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipCam: {fileID: 762101127}
+  iText: {fileID: 1830233464}
+  pText: {fileID: 298825013}
+  inventory: {fileID: 2020819573}
 --- !u!1001 &1680382774
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38088,6 +38355,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: waterBottle (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4136699501172159592, guid: e28f7cd9e619df546b8973e292ed13b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 993559023124447495, guid: e28f7cd9e619df546b8973e292ed13b4,
         type: 3}
@@ -40064,6 +40336,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: gAmmo (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6790273057627359489, guid: c426c0cabc0823c49972f31f52b2e226,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7681649696864582766, guid: c426c0cabc0823c49972f31f52b2e226,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40313,6 +40590,83 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d209be13548e70947bc39053977ce977, type: 3}
+--- !u!1 &1830233462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1830233463}
+  - component: {fileID: 1830233465}
+  - component: {fileID: 1830233464}
+  m_Layer: 5
+  m_Name: iText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1830233463
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830233462}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1679344762}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1830233464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830233462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New Text
+--- !u!222 &1830233465
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830233462}
+  m_CullTransparentMesh: 0
 --- !u!4 &1830793409 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000012771108642, guid: 9d1bb44d500a3ad489d3cb3a6900199f,
@@ -41443,6 +41797,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cbAmmo (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8511711584888013082, guid: 0b7a64587265a7747bc9f83ae5d94450,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4809556859583378549, guid: 0b7a64587265a7747bc9f83ae5d94450,
         type: 3}
@@ -43593,6 +43952,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: firstaid 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1987713744733760, guid: ffd90bead7e2c4c4489a81b193873511, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4792054580643688, guid: ffd90bead7e2c4c4489a81b193873511, type: 3}
       propertyPath: m_LocalPosition.x
       value: -67.12
@@ -44481,6 +44844,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 940d55d4117386f4f9398ea3ff52d4cd, type: 3}
+--- !u!114 &2020819573 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 717561278655189789, guid: f7f09b68b2d393e4e9138151e44cbd6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1850413703}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97a58187a7959b244a90e0c92c4f1194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2021162252
 GameObject:
   m_ObjectHideFlags: 0
@@ -46486,6 +46861,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: waterBottle (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4136699501172159592, guid: e28f7cd9e619df546b8973e292ed13b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 993559023124447495, guid: e28f7cd9e619df546b8973e292ed13b4,
         type: 3}

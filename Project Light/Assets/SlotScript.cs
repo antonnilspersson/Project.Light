@@ -14,6 +14,19 @@ public class SlotScript : MonoBehaviour
         Crossbow();
         Revolver();
         Rifle();
+        Unarmed();
+    }
+
+    void Unarmed()
+    {
+        Color color = slot[3].color;
+
+        if (equip.equipSlot == 1)
+            color.a = 1f;
+        else
+            color.a = inactive;
+
+        slot[3].color = color;
     }
 
     void Crossbow()

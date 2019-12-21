@@ -61,7 +61,7 @@ public class ShootScript : MonoBehaviour
                 return;
             }
 
-        ammoText.text = currentAmmo.ToString() + " / " + clipSize + " " + ammo.cbAmmoTotal;
+        ammoText.text = currentAmmo.ToString() + " / " + ammo.cbAmmoTotal;
     }
 
     IEnumerator Reload()

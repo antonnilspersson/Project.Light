@@ -86,7 +86,7 @@ public class PlaceHolderPickup : MonoBehaviour
     private bool IsUsable()
     {
         RaycastHit hit;
-        if(item.tag == "Usable" && Physics.SphereCast(fpsCam.transform.position - fpsCam.transform.forward * 2, 2f, fpsCam.transform.forward, out hit, 10f, usableLayer))
+        if(item.tag == "Usable" && Physics.SphereCast(fpsCam.transform.position - fpsCam.transform.forward * 2, 1f, fpsCam.transform.forward, out hit, 1f, usableLayer))
             return true;
         return false;
     }
@@ -94,7 +94,7 @@ public class PlaceHolderPickup : MonoBehaviour
     private bool FindItem()
     {
         RaycastHit hit;
-        if(Physics.SphereCast(fpsCam.transform.position - fpsCam.transform.forward * 2, 2f, fpsCam.transform.forward, out hit, 10f, itemLayer))
+        if(Physics.SphereCast(fpsCam.transform.position - fpsCam.transform.forward * 2, 1f, fpsCam.transform.forward, out hit, 5f, itemLayer))
         {
             rb = hit.transform.gameObject.GetComponent<Rigidbody>();
             item = hit.transform.gameObject;
