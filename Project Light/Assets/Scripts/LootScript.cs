@@ -47,17 +47,17 @@ public class LootScript : MonoBehaviour
 
     void AmmoAdd()
     {
-        if(itemName == "cbAmmo")
+        if(itemName == "Crossbow ammo")
         {
             inventory.cbAmmoTotal += Random.Range(5,8);
             Destroy(gameObject);
         }
-        if (itemName == "rAmmo")
+        if (itemName == "Rifle ammo")
         {
             inventory.rAmmoTotal += Random.Range(5, 8);
             Destroy(gameObject);
         }
-        if (itemName == "gAmmo")
+        if (itemName == "Revolver ammo")
         {
             inventory.gAmmoTotal += Random.Range(5, 8);
             Destroy(gameObject);
@@ -67,7 +67,7 @@ public class LootScript : MonoBehaviour
             inventory.crossbow = 1;
             Destroy(gameObject);
         }
-        if(itemName == "Gun")
+        if(itemName == "Revolver")
         {
             inventory.gun = 1;
             Destroy(gameObject);
@@ -82,7 +82,7 @@ public class LootScript : MonoBehaviour
             Inventory.water += 1;
             Destroy(gameObject);
         }
-        if (itemName == "Health")
+        if (itemName == "First aid kit")
         {
             healthS.health += 50;
             Destroy(gameObject);

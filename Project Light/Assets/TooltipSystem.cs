@@ -11,45 +11,61 @@ public class TooltipSystem : MonoBehaviour
 
     public Text iText;
     public Text pText;
+    public Text sText;
 
     public Inventory inventory;
 
 
     GameObject item;
     GameObject plant;
+    GameObject plantspot;
     PlaceHolderPickup php;
 
     void Start()
     {
         iText.text = "";
         pText.text = "";
+        sText.text = "";
     }
 
-    // Update is called once per frame
     void Update()
     {
-        TooltipUsable();
+        TooltipLoot();
+        TooltipPlant();
+        pSpot();
     }
 
 
-    void TooltipUsable()
+    void TooltipLoot()
     {
         LayerMask iMask = LayerMask.GetMask("Usable");
-        LayerMask pMask = LayerMask.GetMask("Item");
+        
+        LayerMask sMask = LayerMask.GetMask("UsableObject");
 
         RaycastHit hit;
 
         if (Physics.SphereCast(tooltipCam.transform.position - tooltipCam.transform.forward * 2, 1f, tooltipCam.transform.forward, out hit, 3f, iMask))
         {
             Debug.Log(hit.transform.name);
+            GameObject target = hit.transform.gameObject;
+
+            LootScript loot;
 
 
-            iText.text = "Press [E] to loot "+ hit.transform.name;
+            loot = target.GetComponent<LootScript>();
+
+            iText.text = "Press [E] to loot " + loot.itemName;
         }
         else
         {
             iText.text = "";
         }
+    }
+
+    void TooltipPlant()
+    {
+        RaycastHit hit;
+        LayerMask pMask = LayerMask.GetMask("Item");
 
         if (Physics.SphereCast(tooltipCam.transform.position - tooltipCam.transform.forward * 2, 1f, tooltipCam.transform.forward, out hit, 5f, pMask))
         {
@@ -58,30 +74,46 @@ public class TooltipSystem : MonoBehaviour
             plant = hit.transform.gameObject;
 
             if (Inventory.water <= 0)
-                pText.text = "Press [Q] to pick up the plant. \n Find water to gain seeds";
+                pText.text = "Press [Q] to pick up the plant. \n Find water to gather seeds";
 
             if (Inventory.water > 0)
-                    pText.text = "Press [Q] to pick up the plant. \n Press [G] to water the plant";
+                pText.text = "Press [Q] to pick up the plant. \n Press [G] to water the plant";
         }
         else
         {
             pText.text = "";
             plant = null;
         }
+
     }
 
-    void TooltipPlant()
+    void pSpot()
     {
         RaycastHit hit;
+        LayerMask sMask = LayerMask.GetMask("UsableObject");
 
-        //if (Physics.Raycast(tooltipCam.transform.position, tooltipCam.transform.forward, out hit, range, pMask))
-        //{
-        //    Debug.Log(hit.transform.name);
+        if (Physics.SphereCast(tooltipCam.transform.position - tooltipCam.transform.forward * 2, 1f, tooltipCam.transform.forward, out hit, 5f, sMask))
+        {
+            Debug.Log(hit.transform.name);
 
-        //    plant = hit.transform.gameObject;
+            plantspot = hit.transform.gameObject;
+            PlantSeed seed = plantspot.GetComponent<PlantSeed>();
 
-        //    text.text = "Press [Q] to loot " + plant.name;
-        //}
-        
+            if(!seed.spawned)
+            {
+                if (Inventory.seeds <= 0)
+                    sText.text = "Require seeds to plant a new tree.";
+
+                if (Inventory.seeds > 0)
+                    sText.text = "Press [E] to plant the seed.";
+            }
+            else
+                sText.text = "";
+        }
+        else
+        {
+            sText.text = "";
+            plantspot = null;
+        }
     }
 }

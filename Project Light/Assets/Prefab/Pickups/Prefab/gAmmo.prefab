@@ -4980,7 +4980,7 @@ PrefabInstance:
     - target: {fileID: 336185597642727757, guid: 1f7a0813156011a4c91e5be3d5d332fc,
         type: 3}
       propertyPath: itemName
-      value: gAmmo
+      value: Revolver ammo
       objectReference: {fileID: 0}
     - target: {fileID: 6204094215459814309, guid: 1f7a0813156011a4c91e5be3d5d332fc,
         type: 3}

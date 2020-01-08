@@ -4908,7 +4908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickedUp: 0
-  itemName: Gun
+  itemName: Revolver
 --- !u!54 &89712569333493690
 Rigidbody:
   m_ObjectHideFlags: 0

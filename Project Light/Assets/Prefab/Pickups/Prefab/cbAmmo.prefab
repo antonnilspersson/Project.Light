@@ -141,7 +141,7 @@ PrefabInstance:
     - target: {fileID: 6301224582823559339, guid: c426c0cabc0823c49972f31f52b2e226,
         type: 3}
       propertyPath: itemName
-      value: cbAmmo
+      value: Crossbow ammo
       objectReference: {fileID: 0}
     - target: {fileID: 2314324498619341054, guid: c426c0cabc0823c49972f31f52b2e226,
         type: 3}
