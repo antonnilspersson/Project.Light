@@ -36,8 +36,8 @@ public class SoundTracker : MonoBehaviour
         crouchSource.spatialBlend = 1;
 
         jumpSource.volume = 0.1f;
-        stepsSource.volume = 0.1f;
-        crouchSource.volume = 0.05f;
+        stepsSource.volume = 0.06f;
+        crouchSource.volume = 0.12f;
 
         jumpSource.clip = grassJump;
         stepsSource.clip = WalkFast;

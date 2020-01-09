@@ -20,12 +20,12 @@ public class GorillaAudioScript : MonoBehaviour
     {
         GorillaWalkAudio.clip = GorillaWalk;
         GorillaWalkAudio.loop = true;
-        GorillaWalkAudio.volume = 1.0f;
+        GorillaWalkAudio.volume = 0.3f;
         GorillaWalkAudio.pitch = 0.5f;
 
         GorillaChargeAudio.clip = GorillaCharge;
         GorillaChargeAudio.loop = true;
-        GorillaChargeAudio.volume = 0.7f;
+        GorillaChargeAudio.volume = 0.2f;
         GorillaChargeAudio.pitch = 0.5f;
     }
 

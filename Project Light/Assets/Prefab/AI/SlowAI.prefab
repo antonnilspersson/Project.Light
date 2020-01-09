@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7607fc2d7f50a4b49b5d0e353cf6d618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bigBoiChargyChargy: 0
   wanderTarget: {x: 0, y: 0, z: 0}
   wanderSpeed: 2
   chaseSpeed: 4
@@ -109,6 +110,7 @@ MonoBehaviour:
   attackForce: 6
   downTime: 2
   swipeCooldown: 1
+  distanceToPlayer: 0
   agent: {fileID: 7642997830608099737}
   IsShot: 0
 --- !u!114 &305031092426433482
@@ -125,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeadMonster: 0
   health: 30
+  isDead: 0
 --- !u!114 &305031094176086469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,8 +200,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5e1291905fe73442998c0dafb9eb574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GorillaWalk: {fileID: 8300000, guid: af3c61cbc94027c4b9f874baf2c67bbd, type: 3}
-  GorillaCharge: {fileID: 8300000, guid: 49d91fd885fba114db8d2279e126da61, type: 3}
+  GorillaWalk: {fileID: 8300000, guid: b22ee1d1de765ec4eb70f7f5fe934e79, type: 3}
+  GorillaCharge: {fileID: 8300000, guid: cc6b213ea6194064ab94b702be9de9c1, type: 3}
   GorillaWalkAudio: {fileID: 2609272193203978082}
   GorillaChargeAudio: {fileID: -8893679988280931808}
   charging: 0

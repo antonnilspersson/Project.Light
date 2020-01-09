@@ -40,6 +40,7 @@ public class TargetScript : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("BoneDying");
         isDead = true;
 
+
         dTimer += Time.deltaTime;
         if (dTimer >= dTimeInterval)
         {

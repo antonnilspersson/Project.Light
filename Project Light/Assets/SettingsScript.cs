@@ -43,7 +43,7 @@ public class SettingsScript : MonoBehaviour
             if(QualitySettings.GetQualityLevel() == i)
             {
                 currentGraphicsIndex = i;
-                Debug.Log("lend me some sugar");
+                //Debug.Log("lend me some sugar");
             }
         }
 

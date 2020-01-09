@@ -479,7 +479,7 @@ public class Minion : MonoBehaviour
             if (m_Animator != null)
                 m_Animator.SetBool("Swipe", true);
 
-            FindObjectOfType<AudioManager>().Play("GorillaSmash", 0.4f, 0.6f);//play Smash sound
+            FindObjectOfType<AudioManager>().Play("GorillaSmash", 0.0f, 0.6f);//play Smash sound
             Task.current.Succeed();
         }
         else

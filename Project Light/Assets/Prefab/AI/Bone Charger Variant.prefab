@@ -233,14 +233,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1f2c32c52b7de14f9f101963ad3e22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoneWalk: {fileID: 8300000, guid: af3c61cbc94027c4b9f874baf2c67bbd, type: 3}
-  BoneCharge: {fileID: 8300000, guid: 49d91fd885fba114db8d2279e126da61, type: 3}
+  BoneWalk: {fileID: 8300000, guid: b22ee1d1de765ec4eb70f7f5fe934e79, type: 3}
+  BoneCharge: {fileID: 8300000, guid: cc6b213ea6194064ab94b702be9de9c1, type: 3}
   BoneWalkAudio: {fileID: -1347671508419646694}
   BoneChargeAudio: {fileID: 1340511979442278955}
   charging: 0
   hostile: 0
   BoneScript: {fileID: 3220082710402015089}
   BoneTarget: {fileID: 8920399198410432915}
+  playOnce: 0
 --- !u!114 &1976367763945251849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,6 +322,7 @@ MonoBehaviour:
   attackForce: 0.4
   downTime: 1.5
   swipeCooldown: 2
+  distanceToPlayer: 0
   agent: {fileID: 4227656789922302935}
   IsShot: 0
 --- !u!114 &8920399198410432915
@@ -337,6 +339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeadMonster: 0
   health: 20
+  isDead: 0
 --- !u!1001 &8832061472394751419
 PrefabInstance:
   m_ObjectHideFlags: 0

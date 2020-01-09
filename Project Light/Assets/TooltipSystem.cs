@@ -46,7 +46,6 @@ public class TooltipSystem : MonoBehaviour
 
         if (Physics.SphereCast(tooltipCam.transform.position - tooltipCam.transform.forward * 2, 1f, tooltipCam.transform.forward, out hit, 3f, iMask))
         {
-            Debug.Log(hit.transform.name);
             GameObject target = hit.transform.gameObject;
 
             LootScript loot;
@@ -69,8 +68,6 @@ public class TooltipSystem : MonoBehaviour
 
         if (Physics.SphereCast(tooltipCam.transform.position - tooltipCam.transform.forward * 2, 1f, tooltipCam.transform.forward, out hit, 5f, pMask))
         {
-            Debug.Log(hit.transform.name);
-
             plant = hit.transform.gameObject;
 
             if (Inventory.water <= 0)
@@ -94,8 +91,6 @@ public class TooltipSystem : MonoBehaviour
 
         if (Physics.SphereCast(tooltipCam.transform.position - tooltipCam.transform.forward * 2, 1f, tooltipCam.transform.forward, out hit, 5f, sMask))
         {
-            Debug.Log(hit.transform.name);
-
             plantspot = hit.transform.gameObject;
             PlantSeed seed = plantspot.GetComponent<PlantSeed>();
 
