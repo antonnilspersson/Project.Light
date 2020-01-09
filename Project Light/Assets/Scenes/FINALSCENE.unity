@@ -10972,21 +10972,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 249032747}
-    - target: {fileID: 6227068220941766180, guid: 87190f0d6abd14a44b22fff7fe295612,
-        type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1776648475515495173, guid: 87190f0d6abd14a44b22fff7fe295612,
-        type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4603994050393539757, guid: 87190f0d6abd14a44b22fff7fe295612,
-        type: 3}
-      propertyPath: m_Shadows.m_Strength
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87190f0d6abd14a44b22fff7fe295612, type: 3}
 --- !u!4 &487724994 stripped
