@@ -1,10 +1,17 @@
-﻿
+﻿using Panda;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class TargetScript : MonoBehaviour
 {
     public bool DeadMonster = false;
     private EnemyManager em;
+    private PandaBehaviour panda;
+    private NavMeshAgent agent;
+    private Animator m_Animator;
+    private Vector3 deathPosition;
+    private Minion minion;
+    private AudioSource[] sources;
 
     public float health = 100f;
 
@@ -15,6 +22,12 @@ public class TargetScript : MonoBehaviour
     void Start()
     {
         em = GameObject.FindGameObjectWithTag("GM").GetComponent<EnemyManager>();
+        panda = GetComponent<PandaBehaviour>();
+        agent = GetComponent<NavMeshAgent>();
+        m_Animator = GetComponent<Animator>();
+        if(GetComponent<Minion>() != null)
+            minion = GetComponent<Minion>();
+        sources = GetComponents<AudioSource>();
     }
 
     private void Update()
@@ -28,6 +41,7 @@ public class TargetScript : MonoBehaviour
     public void TakeDamage(float amount)
     {
         health -= amount;
+        minion.IsShot = true;
         Debug.Log("ENEMY SHOT" + health);
         //if(health <= 0f)
         //{
@@ -37,8 +51,19 @@ public class TargetScript : MonoBehaviour
 
     void Die()
     {
+        for(int i = 0; i < sources.Length; i++)
+            sources[i].Stop();
         FindObjectOfType<AudioManager>().Play("BoneDying");
+        panda.enabled = false;
+        agent.enabled = false;
+        if (!isDead)
+        {
+            deathPosition = transform.position;
+            deathPosition.y -= 0.5f;
+        }
         isDead = true;
+        m_Animator.SetTrigger("Death");
+        transform.position = deathPosition;
 
 
         dTimer += Time.deltaTime;

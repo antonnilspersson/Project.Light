@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4000010233740098}
   - component: {fileID: 33000012058168600}
   - component: {fileID: 23000014006211190}
+  - component: {fileID: 8172714940626978579}
   m_Layer: 0
   m_Name: crate-2_LOD1
   m_TagString: Untagged
@@ -78,6 +79,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8172714940626978579
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011082357302}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300002, guid: f3968db960c76c64589e41b7cce11bde, type: 3}
 --- !u!1 &1000011719990158
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,6 +104,7 @@ GameObject:
   - component: {fileID: 4000014279898150}
   - component: {fileID: 33000012511602480}
   - component: {fileID: 23000010878817768}
+  - component: {fileID: 2176163024872276973}
   m_Layer: 0
   m_Name: crate-2_LOD0
   m_TagString: Untagged
@@ -156,6 +172,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2176163024872276973
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011719990158}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: f3968db960c76c64589e41b7cce11bde, type: 3}
 --- !u!1 &1000012548306624
 GameObject:
   m_ObjectHideFlags: 0

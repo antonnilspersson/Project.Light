@@ -153,6 +153,9 @@ public class Minion : MonoBehaviour
     [Task]
     public void WalkToWanderTarget()
     {
+        if(IsShot)
+            Task.current.Succeed();
+
         if (m_Animator != null)
                 m_Animator.SetBool("Charge", false);
 
