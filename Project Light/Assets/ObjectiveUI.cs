@@ -25,7 +25,7 @@ public class ObjectiveUI : MonoBehaviour
         if (seeds[3].spawned)
             trainInt = 1;
 
-        objectives[0].text = "Start: " + somethingInt + "/1";
+        objectives[0].text = "Lake House: " + somethingInt + "/1";
         objectives[1].text = "Warehouse: " + warehouseInt + "/1";
         objectives[2].text = "Statue: " + statueInt + "/1";
         objectives[3].text = "Trainyard: " + trainInt + "/1";
