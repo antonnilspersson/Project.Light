@@ -14312,7 +14312,7 @@ MonoBehaviour:
   slowAI: {fileID: 305031092637350287, guid: 71dce76bc4cb09547ae35b1f553ab8b2, type: 3}
   fastAI: {fileID: 698097572015764658, guid: ddef5454e85ddb641aa49611da6ca675, type: 3}
   bossAI: {fileID: 1047042239727315203, guid: 374e8ef524911364ca0e05406f362bfd, type: 3}
-  maxAmount: 0
+  maxAmount: 10
   spawnInterval: 2
   IsBossDead: 0
 --- !u!114 &604043748
@@ -14335,7 +14335,7 @@ MonoBehaviour:
   em: {fileID: 604043747}
   ps: {fileID: 1406815906}
   color: {r: 0.37484455, g: 1, b: 0, a: 0.6862745}
-  currentPlanted: 4
+  currentPlanted: 0
   maxPlanted: 4
 --- !u!114 &604043749
 MonoBehaviour:
