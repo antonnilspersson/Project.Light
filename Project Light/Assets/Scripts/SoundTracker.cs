@@ -22,7 +22,9 @@ public class SoundTracker : MonoBehaviour
     private float newTimer = 0f;
 
     private bool isCrouching = false;
-    
+
+    private GameObject player;
+    private MovementScript playerScript;
 
     void Start()
     {
@@ -42,10 +44,15 @@ public class SoundTracker : MonoBehaviour
         jumpSource.clip = grassJump;
         stepsSource.clip = WalkFast;
         crouchSource.clip = WalkSlow;
+
+        player = GameObject.FindWithTag("Player");
+        
     }
 
     void Update()
     {
+        playerScript = player.GetComponent<MovementScript>();
+
         isCrouching = this.gameObject.GetComponent<MovementScript>().isCrouching;
 
         CheckForMovement();
@@ -143,6 +150,19 @@ public class SoundTracker : MonoBehaviour
         {
             jumpSource.PlayDelayed(0.5f);
         }
+
+        if(playerScript.isJumping)
+        {
+            crouchSource.volume = 0.0f;
+            stepsSource.volume = 0.0f;
+        }
+
+        if(!playerScript.isJumping)
+        {
+            stepsSource.volume = 0.06f;
+            crouchSource.volume = 0.12f;
+        }
+        
     }
     
     void CheckForWalk()

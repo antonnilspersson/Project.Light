@@ -21,7 +21,7 @@ public class MovementScript : MonoBehaviour
     float movementSpeed;
     float oldMovementSpeed;
     float originalHeight; //For camera
-    bool isJumping;
+    public bool isJumping;
     bool isDodging;
     public static bool isDead = false;
     public static bool Tutorial = false;
