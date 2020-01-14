@@ -46,37 +46,49 @@ MonoBehaviour:
   sounds:
   - name: BoneDying
     clip: {fileID: 8300000, guid: 9182dddfdf4163b4283c7f3e5a33f4e7, type: 3}
-    volume: 0.214
+    volume: 0.1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: GunShot
     clip: {fileID: 8300000, guid: dda8a7822220efd47aec0461dcb34ea3, type: 3}
-    volume: 0.842
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Ambience1
     clip: {fileID: 8300000, guid: cefc4df073de3c9498be9c6f13879eb9, type: 3}
-    volume: 0.842
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: Ambience2
-    clip: {fileID: 8300000, guid: f618d8f171a409447a4993ced6305e28, type: 3}
-    volume: 0.842
+  - name: Mystery
+    clip: {fileID: 8300000, guid: 3e040c516f01552468ca6481df98e428, type: 3}
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: Ambience3
-    clip: {fileID: 8300000, guid: b7a3ceb97a948b042a84642c95c60bf6, type: 3}
-    volume: 0.842
+  - name: LifeTheme
+    clip: {fileID: 8300000, guid: c5d4287f840dfb847b0a658b83fb30b8, type: 3}
+    volume: 0.093
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Ambience4
     clip: {fileID: 8300000, guid: 36cbd07a93b090a4d99ada9c27d32864, type: 3}
-    volume: 0.842
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: GorillaSmash
+    clip: {fileID: 8300000, guid: a529b7fd18c07cd47937b689b70a87ef, type: 3}
+    volume: 0.194
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MonsterHit
+    clip: {fileID: 8300000, guid: 5a64a4caefaeebe43b28ca2482879c7e, type: 3}
+    volume: 0.15
     pitch: 1
     loop: 0
     source: {fileID: 0}

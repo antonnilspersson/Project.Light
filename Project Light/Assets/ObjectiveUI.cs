@@ -38,7 +38,7 @@ public class ObjectiveUI : MonoBehaviour
             objectives[1].text = "";
             objectives[2].text = "";
             objectives[3].text = "";
-            objectives[4].text = "Mothertree: " + finalInt + "/0";
+            objectives[4].text = "Mothertree: " + finalInt + "/1";
         }
     }
 }
