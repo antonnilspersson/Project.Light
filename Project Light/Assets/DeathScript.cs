@@ -44,6 +44,7 @@ public class DeathScript : MonoBehaviour
             {
                 Cursor.lockState = CursorLockMode.None;
                 deathMenu.SetActive(true);
+                Cursor.visible = true;
             }
         }
         

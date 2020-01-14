@@ -85,12 +85,10 @@ public class SettingsScript : MonoBehaviour
             if(!GameIsPaused)
             {
                 Pause();
-                return;
             }
             else if (GameIsPaused)
             {
                 Resume();
-                return;
             }
         }
 
@@ -99,6 +97,7 @@ public class SettingsScript : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
+        settingsMenuUI.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
@@ -109,7 +108,7 @@ public class SettingsScript : MonoBehaviour
     {
         pauseMenuUI.SetActive(true);
         Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
         GameIsPaused = true;
     }

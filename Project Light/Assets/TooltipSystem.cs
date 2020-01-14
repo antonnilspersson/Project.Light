@@ -92,6 +92,7 @@ public class TooltipSystem : MonoBehaviour
         if (Physics.SphereCast(tooltipCam.transform.position - tooltipCam.transform.forward * 2, 1f, tooltipCam.transform.forward, out hit, 5f, sMask))
         {
             plantspot = hit.transform.gameObject;
+
             PlantSeed seed = plantspot.GetComponent<PlantSeed>();
 
             if(!seed.spawned)

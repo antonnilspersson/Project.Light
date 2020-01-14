@@ -82,7 +82,8 @@ public class TargetScript : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<BoltScript>() != null)
             {
-                health -= collision.gameObject.GetComponent<BoltScript>().damage; 
+                health -= collision.gameObject.GetComponent<BoltScript>().damage;
+                FindObjectOfType<AudioManager>().Play("MonsterHit");
                 print(health);
             }
             

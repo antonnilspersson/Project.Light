@@ -7,11 +7,11 @@ public class TutorialText : MonoBehaviour
     public Text text;
     public string[] strings;
     float timer = 0;
-    float fTimeInterval = 3;
-    float tTimeInterval = 1;
+    float fTimeInterval = 1;
+    float tTimeInterval = 0.5f;
 
     float startTimer = 0;
-    float startInterval = 2;
+    float startInterval = 1;
 
     int i = 0;
 
@@ -85,7 +85,7 @@ public class TutorialText : MonoBehaviour
 
     void FadeOut()
     {
-        color.a -= Time.deltaTime / 3;
+        color.a -= Time.deltaTime / 2;
         text.color = color;
         if (text.color.a <= 0)
         {
