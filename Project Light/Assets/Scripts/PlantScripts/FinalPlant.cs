@@ -6,6 +6,7 @@ public class FinalPlant : MonoBehaviour
 {
     public EnemyManager em;
     public WinManager wm;
+    public PlantManager pm;
     public GameObject mainPlant;
     public GameObject hand;
     public Camera cam;
@@ -31,7 +32,7 @@ public class FinalPlant : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
-            if (em.IsBossDead)
+            if (pm.currentPlanted >= pm.maxPlanted)
                 wm.HasWon = true;  
     }
 }

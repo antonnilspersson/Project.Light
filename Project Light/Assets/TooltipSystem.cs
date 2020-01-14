@@ -95,7 +95,7 @@ public class TooltipSystem : MonoBehaviour
 
             PlantSeed seed = plantspot.GetComponent<PlantSeed>();
 
-            if(!seed.spawned)
+            if(seed != null && !seed.spawned)
             {
                 if (Inventory.seeds <= 0)
                     sText.text = "Require seeds to plant a new tree.";
