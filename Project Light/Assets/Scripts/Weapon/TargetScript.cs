@@ -43,6 +43,7 @@ public class TargetScript : MonoBehaviour
         health -= amount;
         if(minion != null){minion.IsShot = true; }
         Debug.Log("ENEMY SHOT" + health);
+        FindObjectOfType<AudioManager>().Play("MonsterHit");
         //if(health <= 0f)
         //{
         //    Die();

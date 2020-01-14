@@ -47,7 +47,6 @@ public class DeathScript : MonoBehaviour
                 Cursor.visible = true;
             }
         }
-        
     }
 
     public void ReturntoMain()
