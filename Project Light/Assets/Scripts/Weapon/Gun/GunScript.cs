@@ -45,7 +45,7 @@ public class GunScript : MonoBehaviour
 
         if (!isReloading && currentAmmo > 0)
         {
-            helperText.text = "";
+            if(helperText != null){helperText.text = ""; }
             if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time >= nextTimeToFire)
             {
                 nextTimeToFire = Time.time + 1f / fireRate;
