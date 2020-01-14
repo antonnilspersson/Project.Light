@@ -11,14 +11,6 @@ public class FinalPlant : MonoBehaviour
     public Camera cam;
     private bool triggered = false;
 
-    void Update()
-    {
-        if(em.IsBossDead)
-            if(triggered)
-                wm.HasWon = true;
-                
-    }
-
     bool IsMainPlantHeld()
     {
         if(mainPlant.transform.parent == hand)
@@ -38,7 +30,8 @@ public class FinalPlant : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Lootcube")
-            triggered = true;
+        if(other.gameObject.tag == "Player")
+            if (em.IsBossDead)
+                wm.HasWon = true;  
     }
 }

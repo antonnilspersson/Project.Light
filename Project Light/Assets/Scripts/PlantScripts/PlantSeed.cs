@@ -13,6 +13,8 @@ public class PlantSeed : MonoBehaviour
     public GameObject parent;
     public Camera cam;
     private Rigidbody rb;
+    private BoxCollider boxCollider;
+    private Vector3 boxSize;
     public bool spawned = false;
     private bool triggered = false;
     public bool Test = false;
@@ -20,6 +22,8 @@ public class PlantSeed : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        boxCollider = GetComponent<BoxCollider>();
+        boxSize.y = boxCollider.size.y / 2;
     }
 
     void Update()
@@ -30,7 +34,7 @@ public class PlantSeed : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.E) && !spawned)
                 {
-                    spawnedSeed = (GameObject)Instantiate(seed, transform.position, Quaternion.identity);
+                    spawnedSeed = (GameObject)Instantiate(seed, transform.position - boxSize, Quaternion.identity);
                     spawnedSeed.GetComponent<LightAdjuster>().isPlanted = true;
                     pm.AddCurrentPlanted(1);
                     Inventory.seeds -= 1;

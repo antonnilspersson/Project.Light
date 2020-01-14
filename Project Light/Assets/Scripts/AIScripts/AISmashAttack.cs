@@ -60,7 +60,7 @@ public class AISmashAttack : MonoBehaviour
         {
             if (doDamage)
             {
-                playerScript.health -= 20;
+                playerScript.health -= 15;
                 knockBackDir = player.transform.position - knockBackPos.transform.position;
                 player.GetComponent<ImpactReceiver>().AddImpact(knockBackDir, force);
                 Debug.Log("Health: " + (int)playerScript.health);

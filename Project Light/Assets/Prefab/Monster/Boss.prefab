@@ -41,7 +41,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84958b02526ecae47a8645627e5d8219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  DeadMonster: 0
+  health: 70
+  isDead: 0
 --- !u!114 &1607024713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +95,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsCharging: 0
+--- !u!114 &7677247840407723084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047042239727315203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84958b02526ecae47a8645627e5d8219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeadMonster: 0
+  health: 80
+  isDead: 0
 --- !u!195 &7938388336570474517
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -115,19 +132,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &7677247840407723084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047042239727315203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84958b02526ecae47a8645627e5d8219, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
 --- !u!1001 &9053988185910669322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -139,6 +143,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3036fa9907f16d747b2c044eb12adf37,
+        type: 3}
+      propertyPath: m_TagString
+      value: boss
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3036fa9907f16d747b2c044eb12adf37,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: -4150093729039309280, guid: 3036fa9907f16d747b2c044eb12adf37,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3036fa9907f16d747b2c044eb12adf37,
         type: 3}

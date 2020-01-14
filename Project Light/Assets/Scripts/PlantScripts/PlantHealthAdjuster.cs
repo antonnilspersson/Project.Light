@@ -10,7 +10,8 @@ public class PlantHealthAdjuster : MonoBehaviour
     private MovementScript playerScript;
     public int regen = 2;
     private bool Enabled = false;
-    public Text text;
+    GameObject plant;
+    private Text text;
     Color color;
 
     // Temp Variables - should be added to player class
@@ -20,8 +21,11 @@ public class PlantHealthAdjuster : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        plant = GameObject.Find("CompletePot");
+        text = plant.GetComponentInChildren<Text>();
         playerScript = player.GetComponent<MovementScript>();
         text.text = "Oxygen levels going down";
+        //if (transform.parent.gameObject.transform.parent.gameObject == plant) {text.text = "Oxygen levels going down"; }
         color = text.color;
     }
 
@@ -34,10 +38,12 @@ public class PlantHealthAdjuster : MonoBehaviour
 
             if(playerScript.Oxygen > maxOxygen)
                 playerScript.Oxygen = maxOxygen;
-
+            
             color.a -= Time.deltaTime;
             if (color.a <= 0)
                 color.a = 0;
+
+            text.color = color;
         }
         else
         {
@@ -46,8 +52,7 @@ public class PlantHealthAdjuster : MonoBehaviour
             if(color.a >= 0.2f)
                 color.a = Mathf.Lerp(0.2f, 1, Mathf.PingPong((Time.time), 1));
         }
-
-        text.color = color;
+        if(transform.parent.gameObject.transform.parent.gameObject == plant){text.color = color; }
     }
 
     // Does not work when you leave one plants area but is still

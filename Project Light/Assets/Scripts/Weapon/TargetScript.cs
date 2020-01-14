@@ -41,7 +41,7 @@ public class TargetScript : MonoBehaviour
     public void TakeDamage(float amount)
     {
         health -= amount;
-        minion.IsShot = true;
+        if(minion != null){minion.IsShot = true; }
         Debug.Log("ENEMY SHOT" + health);
         //if(health <= 0f)
         //{

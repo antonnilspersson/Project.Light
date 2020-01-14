@@ -6,6 +6,8 @@ public class PlantManager : MonoBehaviour
 {
     public PlantSeed[] seeds;
     public EnemyManager em;
+    public ParticleSystem ps;
+    public Color color;
     public int currentPlanted = 0;
     public int maxPlanted = 5;
     private bool bossSpawned = false;
@@ -13,7 +15,6 @@ public class PlantManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     public void AddCurrentPlanted(int amount)
@@ -29,6 +30,7 @@ public class PlantManager : MonoBehaviour
         if(currentPlanted >= maxPlanted && !bossSpawned)
         {
             em.SpawnBossAI();
+            ps.startColor = color;
             bossSpawned = true;
         }
             

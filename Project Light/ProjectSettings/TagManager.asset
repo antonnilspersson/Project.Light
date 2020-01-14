@@ -17,6 +17,7 @@ TagManager:
   - Inventory
   - SwipeCube
   - BoneCharger
+  - boss
   layers:
   - Default
   - TransparentFX
@@ -34,7 +35,7 @@ TagManager:
   - Enemy
   - heatmap
   - Usable
-  - 
+  - Boss
   - 
   - 
   - 

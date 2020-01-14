@@ -19,6 +19,7 @@ public class GunScript : MonoBehaviour
     private float nextTimeToFire = 0f;
     public float fireRate;
     public Text ammoText;
+    public Text helperText;
 
     public Inventory ammo;
     public int clipSize = 6;
@@ -43,6 +44,8 @@ public class GunScript : MonoBehaviour
             return;
 
         if (!isReloading && currentAmmo > 0)
+        {
+            helperText.text = "";
             if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time >= nextTimeToFire)
             {
                 nextTimeToFire = Time.time + 1f / fireRate;
@@ -50,7 +53,9 @@ public class GunScript : MonoBehaviour
                 muzzleFlash.Play();
 
             }
-
+        }
+        if(!isReloading && currentAmmo <= 0)
+            helperText.text = "Out of Ammo";
 
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -75,7 +80,7 @@ public class GunScript : MonoBehaviour
 
         isReloading = true;
         print("reloading");
-
+        helperText.text = "Reloading..";
 
         yield return new WaitForSeconds(reloadTime);
 

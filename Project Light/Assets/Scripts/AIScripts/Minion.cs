@@ -18,7 +18,7 @@ public class Minion : MonoBehaviour
     // Chase Variables
     private float soundRange = 10f;
     private float sightRange = 15f;
-    private float aggroRange = 20f;
+    private float aggroRange = 30f;
     public float chaseSpeed = 4f;
     private float aggroRadius = 3f;
 

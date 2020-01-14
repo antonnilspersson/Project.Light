@@ -20,10 +20,10 @@ public class Boss : MonoBehaviour
     // Charge Variables
     private float chargeCooldown = 8f;
     private float chargeTimer = 0f;
-    private float chargeMaxRange = 30f;
+    private float chargeMaxRange = 20f;
     private float chargeMinRange = 15f;
-    private float chargeDistance = 35f;
-    private float speedIncrease = 16f;
+    private float chargeDistance = 20f;
+    private float speedIncrease = 12f;
     private float rotationSpeed = 2f;
     private Quaternion chargeDirection;
     private Vector3 chargeTarget;
@@ -31,7 +31,7 @@ public class Boss : MonoBehaviour
     // Smash Variables
     private bool smashAttacking = true;
     private float smashRange = 5f;
-    private float smashScale = 3f;
+    private float smashScale = 2.5f;
     private float smashTimer = 0f;
     private float smashCooldown = 10f;
     private GameObject attackCube;
@@ -67,7 +67,6 @@ public class Boss : MonoBehaviour
 
     // Animation
     private Animator m_Animator;
-
 
     // Start is called before the first frame update
     void Start()
@@ -109,6 +108,15 @@ public class Boss : MonoBehaviour
         if(Physics.Raycast(ray, 4, environmentLayer))
             return true;
         return false;
+    }
+
+    [Task]
+    public void IsInsideAggroRange()
+    {
+        if(Vector3.Distance(player.transform.position, transform.position) < 30)
+            Task.current.Succeed();
+        else
+            Task.current.Fail();
     }
 
     [Task]
@@ -221,10 +229,10 @@ public class Boss : MonoBehaviour
             IsCharging = false;
             attacking = false;
             chargeTimer = 0f;
-            Task.current.Fail();
+            Task.current.Succeed();
         }
 
-        if(Vector3.Distance(transform.position, chargeTarget) <= 8f)
+        if(Vector3.Distance(transform.position, chargeTarget) <= 12f)
         {
             m_Animator.SetBool("Charge", false);
             GetComponent<AIChargeAttack>().attacking = false;

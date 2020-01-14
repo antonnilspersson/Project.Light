@@ -9,6 +9,7 @@ public class ShootScript : MonoBehaviour
     public Camera cam;
     public GameObject boltPrefab;
     public Transform boltSpawn;
+    public Text helperText;
     public Animator anim;
     [SerializeField] float shootForce;
 
@@ -45,6 +46,8 @@ public class ShootScript : MonoBehaviour
             return;
 
         if (!isReloading && currentAmmo > 0)
+        {
+            helperText.text = "";
             if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time >= nextTimeToFire)
             {
                 anim.SetBool("MakeShoot", true);
@@ -53,6 +56,10 @@ public class ShootScript : MonoBehaviour
                 rb.velocity = cam.transform.forward * shootForce;
                 currentAmmo--;
             }
+        }
+
+        if(!isReloading && currentAmmo <= 0)
+            helperText.text = "Out of Ammo";
 
         if (ammo.cbAmmoTotal > 0)
             if (Input.GetKeyDown(KeyCode.R))
@@ -70,6 +77,7 @@ public class ShootScript : MonoBehaviour
 
         isReloading = true;
         print("reloading");
+        helperText.text = "Reloading..";
 
         yield return new WaitForSeconds(reloadTime);
 

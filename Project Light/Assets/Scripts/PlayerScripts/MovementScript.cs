@@ -12,6 +12,7 @@ public class MovementScript : MonoBehaviour
     PlantSeed ps;
     public int hDeath;
     public bool isCrouching = false;
+    private bool exhausted = false;
 
     private Rigidbody rb;
 
@@ -61,6 +62,7 @@ public class MovementScript : MonoBehaviour
 
     void Update()
     {
+        Exhausted();
         PlayerControls();
 
         if (health <= 0)
@@ -126,14 +128,23 @@ public class MovementScript : MonoBehaviour
         }
     }
 
+    private void Exhausted()
+    {
+        if(!exhausted && Oxygen <= 1)
+            exhausted = true;
+
+        if(exhausted && Oxygen >= 6)
+            exhausted = false;
+    }
+
     private void SetMovementSpeed()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && Oxygen > 10)
+        if (Input.GetKey(KeyCode.LeftShift) && !exhausted)
         {
             movementSpeed = Mathf.Lerp(movementSpeed, runSpeed, Time.deltaTime * runBuildUpSpeed);
-            soundRange = 20f;
+            soundRange = 20f; 
             if(GetComponent<OxygenDegeneration>() != null)
-                GetComponent<OxygenDegeneration>().degen = 3;
+                GetComponent<OxygenDegeneration>().degen = 4;
         }
         else if (Input.GetKey(KeyCode.LeftControl))
         {
