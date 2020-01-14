@@ -82,13 +82,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: GorillaSmash
     clip: {fileID: 8300000, guid: a529b7fd18c07cd47937b689b70a87ef, type: 3}
-    volume: 0.194
+    volume: 0.14
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: MonsterHit
     clip: {fileID: 8300000, guid: 5a64a4caefaeebe43b28ca2482879c7e, type: 3}
-    volume: 0.15
+    volume: 0.14
     pitch: 1
     loop: 0
     source: {fileID: 0}

@@ -16,7 +16,7 @@ public class ShootScript : MonoBehaviour
     public Inventory ammo;
     private int remAmmo;
 
-    bool isReloading = false;
+    public bool isReloading = false;
 
     private int reloadTime = 1;
 

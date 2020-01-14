@@ -25,7 +25,7 @@ public class GunScript : MonoBehaviour
     public int clipSize = 6;
     public int currentAmmo = -1;
     public float reloadTime = 1f;
-    private bool isReloading = false;
+    public bool isReloading = false;
     public LayerMask mask;
     public bool invertMask;
 
