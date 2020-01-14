@@ -15,6 +15,8 @@ public class TargetScript : MonoBehaviour
 
     public float health = 100f;
 
+    bool play = true;
+
     float dTimer = 0;
     float dTimeInterval = 2;
     public bool isDead;
@@ -34,8 +36,20 @@ public class TargetScript : MonoBehaviour
     {
         if (health <= 0f)
         {
+            InevitableDeath();
             Die();
         }
+    }
+
+    public void InevitableDeath()
+    {
+        if (play)
+        {
+            FindObjectOfType<AudioManager>().Play("BoneDying");
+            play = false;
+        }
+
+        
     }
 
     public void TakeDamage(float amount)
@@ -52,9 +66,10 @@ public class TargetScript : MonoBehaviour
 
     void Die()
     {
-        for(int i = 0; i < sources.Length; i++)
+        
+        for (int i = 0; i < sources.Length; i++)
             sources[i].Stop();
-        FindObjectOfType<AudioManager>().Play("BoneDying");
+        
         panda.enabled = false;
         agent.enabled = false;
         if (!isDead)
@@ -64,6 +79,7 @@ public class TargetScript : MonoBehaviour
         }
         isDead = true;
         m_Animator.SetTrigger("Death");
+        
         transform.position = deathPosition;
 
 
