@@ -13,4 +13,9 @@ public class MiniMapScript : MonoBehaviour
         transform.position = newPosition;
     }
 
+    private void OnPostRender()
+    {
+
+    }
+
 }

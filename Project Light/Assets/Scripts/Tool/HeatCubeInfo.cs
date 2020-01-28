@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HeatCubeInfo : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class HeatCubeInfo : MonoBehaviour
     private Material mat;
     private GameObject player;
     private MovementScript playerScript;
+    private HeatMapManager hm;
     public Color startColor;
     public Color endColor;
     private bool once = false;
@@ -132,6 +134,7 @@ public class HeatCubeInfo : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player");
             playerScript = player.GetComponent<MovementScript>(); 
+            hm = GameObject.FindGameObjectWithTag("GM").GetComponent<HeatMapManager>();
         }
         mat = GetComponent<Renderer>().material;
         mat.color = startColor;
@@ -150,15 +153,13 @@ public class HeatCubeInfo : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
+        {
             AddScore(1);
+            hm.currentCube = this;
+        }
+
         if(other.tag == "Enemy")
             AddAIScore(1);
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if(other.tag == "Usable")
-                AddItems(15);
     }
 
     void OnTriggerStay(Collider other)
@@ -167,8 +168,5 @@ public class HeatCubeInfo : MonoBehaviour
             if(playerScript != null)
                 if(playerScript.health <= 0)
                     AddDeaths(15);
-
-        if(other.tag == "Player")
-            Triggered = true;
     }
 }

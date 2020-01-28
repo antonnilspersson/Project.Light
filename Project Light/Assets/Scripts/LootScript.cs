@@ -16,10 +16,12 @@ public class LootScript : MonoBehaviour
     GameObject player;
     GameObject health;
     MovementScript healthS;
+    HeatMapManager hm;
 
 
     private void Start()
     {
+        hm = GameObject.FindGameObjectWithTag("GM").GetComponent<HeatMapManager>();
         player = GameObject.FindGameObjectWithTag("Inventory");
         inventory = player.GetComponent<Inventory>();
         health = GameObject.FindGameObjectWithTag("Player");
@@ -37,6 +39,7 @@ public class LootScript : MonoBehaviour
             {
                 //Interact();
                 render.material.color = Color.green;
+                if(hm.currentCube != null) hm.currentCube.AddItems(15);
                 AmmoAdd();
             }
             else

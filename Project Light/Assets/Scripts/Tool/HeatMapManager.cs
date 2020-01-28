@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 
 public class HeatMapManager : MonoBehaviour
 {
+    [HideInInspector] public HeatCubeInfo currentCube;
     private List<string> paths = new List<string>();
     public List<GameObject> cubes = new List<GameObject>();
     private List<HeatCubeInfo> infos = new List<HeatCubeInfo>();
